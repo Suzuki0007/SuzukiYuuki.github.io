@@ -7,7 +7,7 @@ body {
   background: #f0f2f5;
   color: #222;
   -webkit-font-smoothing: antialiased;
-  /* サイドバー分を確保して本文を右へ寄せる（大画面） */
+  /* 固定サイドバー幅分を確保 */
   padding-left: 260px;
   transition: padding-left 0.2s ease;
 }
@@ -22,26 +22,11 @@ body {
 header, footer {
   text-align: center;
   margin-bottom: 16px;
-  position: relative;
 }
 header h1 {margin: 0; font-size: 1.6rem;}
 footer {margin-top: 24px; font-size: 0.9rem; color: #666;}
 
-/* ヘッダー内のトグルボタン（小画面で表示） */
-#sidebarToggle {
-  display: none;
-  position: absolute;
-  left: 8px;
-  top: 50%;
-  transform: translateY(-50%);
-  border: none;
-  background: transparent;
-  font-size: 1.2rem;
-  padding: 6px 8px;
-  cursor: pointer;
-}
-
-/* コンテナ — サイドバーは固定化（DOM内には残るが表示は固定） */
+/* コンテナ — メイン */
 #container {
   display: flex;
   gap: 24px;
@@ -93,11 +78,6 @@ footer {margin-top: 24px; font-size: 0.9rem; color: #666;}
   background: rgba(11,102,195,0.08);
 }
 
-/* オーバーレイ（小画面用、デフォルト非表示） */
-#sidebarOverlay {
-  display: none;
-}
-
 /* メインコンテンツ */
 main {
   flex: 1;
@@ -107,101 +87,25 @@ main {
   box-shadow: 0 2px 6px rgba(0,0,0,0.04);
 }
 
-/* レスポンシブ: 狭い画面ではオフキャンバスのサイドバーに切替 */
+/* 小さい画面でもサイドバーを表示（幅を縮める） */
 @media (max-width: 800px) {
-  /* ボディ左余白を解除 */
   body {
-    padding-left: 0;
+    padding-left: 220px; /* サイドバー幅に合わせる */
   }
-
-  /* トグルボタンを表示 */
-  #sidebarToggle {
-    display: inline-block;
-  }
-
-  /* コンテンツは縦並びに */
-  #container {
-    flex-direction: column;
-  }
-
-  /* サイドバーはオフキャンバス（デフォルト隠す） */
   #sidebar {
-    position: fixed;
-    left: 0;
-    top: 0;
-    transform: translateX(-100%);
-    width: 260px;
-    height: 100vh;
-    border-radius: 0 8px 8px 0;
-    padding: 20px 16px;
-    box-shadow: 2px 0 8px rgba(0,0,0,0.12);
-    transition: transform 0.25s ease;
-    will-change: transform;
-  }
-
-  /* ボディにクラスが付いていると表示 */
-  body.sidebar-open #sidebar {
-    transform: translateX(0);
-  }
-
-  /* オーバーレイ表示 */
-  #sidebarOverlay {
-    display: block;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.4);
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.2s ease, visibility 0.2s;
-    z-index: 900;
-  }
-  body.sidebar-open #sidebarOverlay {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  /* サイドバーをコンテンツ内に戻すための外観調整（非固定表示と同様に見せたい場合は無効化） */
-  main {
-    width: 100%;
+    width: 220px;
   }
 }
 
-/* レスポンシブ: 狭い画面ではサイドバーを常に表示する */
-@media (max-width: 800px) {
-  /* ボディ左余白を解除（サイドバーはコンテンツ内に表示） */
+/* より小さい画面では更に幅を詰める */
+@media (max-width: 480px) {
   body {
-    padding-left: 0;
+    padding-left: 180px;
   }
-
-  /* トグルボタンは非表示にする（常に表示するため不要） */
-  #sidebarToggle {
-    display: none;
-  }
-
-  /* オーバーレイは不要 */
-  #sidebarOverlay {
-    display: none;
-  }
-
-  /* レイアウトは縦並びに */
-  #container {
-    flex-direction: column;
-  }
-
-  /* サイドバーをページフローに戻して全幅表示 */
   #sidebar {
-    position: static;
-    transform: none;
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    padding: 16px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
-    transition: none;
+    width: 180px;
+    padding: 12px;
   }
-
-  /* メインはその下に来る */
-  main {
-    width: 100%;
-  }
-}
+  #sidebar .title { font-size: 0.95rem; }
+  .side-list a { font-size: 0.95rem; }
+}  

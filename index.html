@@ -1,78 +1,51 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<title>鈴木裕稀のポートフォリオサイト</title>
-<meta name="keywords" content="ページのキーワードA,B,C">
-<meta name="description" content="ページの説明">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="index.css">
+    <meta charset="UTF-8">
+    <title>鈴木裕稀のポートフォリオサイト</title>
+    <meta name="keywords" content="ページのキーワードA,B,C">
+    <meta name="description" content="ページの説明">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-<div id="outer">
-  <header>
-    <button id="sidebarToggle" aria-label="メニュー" aria-expanded="false">☰</button>
-    <h1>鈴木裕稀のポートフォリオサイト</h1>
-  </header>
-  <div id="sidebarOverlay" aria-hidden="true"></div>
-
-  <div id="container">
+    <!-- サイドバーを body 直下に配置（画面左端に固定するため） -->
     <aside id="sidebar">
-      <nav>
-        <div class="title">Menu</div>
-        <ul class="side-list">
-          <li><a href="#">ホーム</a></li>
-          <li><a href="#">作品一覧</a></li>
-          <li><a href="#">ブログ</a></li>
-          <li><a href="#">プロフィール</a></li>
-        </ul>
-        <div class="title">その他</div>
-        <ul class="side-list">
-          <li><a href="#">連絡先</a></li>
-          <li><a href="#">SNS</a></li>
-        </ul>
-      </nav>
+        <nav>
+            <div class="title">Menu</div>
+            <ul class="side-list">
+                <li><a href="#">ホーム</a></li>
+                <li><a href="#">作品一覧</a></li>
+                <li><a href="#">ブログ</a></li>
+                <li><a href="#">プロフィール</a></li>
+            </ul>
+            <div class="title">その他</div>
+            <ul class="side-list">
+                <li><a href="#">連絡先</a></li>
+                <li><a href="#">SNS</a></li>
+            </ul>
+        </nav>
     </aside>
 
-    <main>
-      <div id="text">
-        <h2>記事ページ見出し・大</h2>
-        <p>文章あれこれ</p>
-        <h3>記事ページ見出し・中</h3>
-        <p>文章あれこれ</p>
-        <h4>記事ページ見出し・小</h4>
-        <p>文章あれこれ</p>
-      </div>
-    </main>
-  </div>
+    <div id="outer">
+        <header>
+            <h1>鈴木裕稀のポートフォリオサイト</h1>
+        </header>
 
-  <footer>© 2010 あなたのホームページ</footer>
-</div>
+        <div id="container">
+            <main>
+                <div id="text">
+                    <h2>記事ページ見出し・大</h2>
+                    <p>文章あれこれ</p>
+                    <h3>記事ページ見出し・中</h3>
+                    <p>文章あれこれ</p>
+                    <h4>記事ページ見出し・小</h4>
+                    <p>文章あれこれ</p>
+                </div>
+            </main>
+        </div>
 
-<script>
-(function(){
-  const btn = document.getElementById('sidebarToggle');
-  const overlay = document.getElementById('sidebarOverlay');
-
-  function openSidebar() {
-    document.body.classList.add('sidebar-open');
-    btn.setAttribute('aria-expanded', 'true');
-    overlay.setAttribute('aria-hidden', 'false');
-  }
-  function closeSidebar() {
-    document.body.classList.remove('sidebar-open');
-    btn.setAttribute('aria-expanded', 'false');
-    overlay.setAttribute('aria-hidden', 'true');
-  }
-  btn.addEventListener('click', () => {
-    if (document.body.classList.contains('sidebar-open')) closeSidebar();
-    else openSidebar();
-  });
-  overlay.addEventListener('click', closeSidebar);
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeSidebar();
-  });
-})();
-</script>
+        <footer>© 2010 あなたのホームページ</footer>
+    </div>
 </body>
 </html>
