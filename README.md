@@ -1,0 +1,1 @@
+# SuzukiYuuki.github.io
