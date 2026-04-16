@@ -1,128 +1,207 @@
 @charset "UTF-8";
-header {
-	background: radial-gradient(circle at 99% 99%, #fff 1px, rgba(255, 255, 255, 0) 2px);
-	padding: 0;
-	height: 100px;
-}
+/* 基本レイアウト */
+* {box-sizing: border-box;}
 body {
-	margin: 0;
-	padding: 0;
-	background-color: #F8FBF8;
-	line-height: 1.6;
+  margin: 0;
+  font-family: "Segoe UI", Roboto, "Hiragino Kaku Gothic ProN", "メイリオ", sans-serif;
+  background: #f0f2f5;
+  color: #222;
+  -webkit-font-smoothing: antialiased;
+  /* サイドバー分を確保して本文を右へ寄せる（大画面） */
+  padding-left: 260px;
+  transition: padding-left 0.2s ease;
 }
+
 #outer {
-	margin: 0 auto;
-	width: 690px;
-	padding: 0 20px;
-	border-top: 2px solid #7A9837;
-	background-color: #ffff;
-	box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
 }
-#main {
-	padding: 4px 0 0 0;
+
+/* ヘッダー/フッター */
+header, footer {
+  text-align: center;
+  margin-bottom: 16px;
+  position: relative;
 }
-#left {
-	width: 48%;
-	float: left;
+header h1 {margin: 0; font-size: 1.6rem;}
+footer {margin-top: 24px; font-size: 0.9rem; color: #666;}
+
+/* ヘッダー内のトグルボタン（小画面で表示） */
+#sidebarToggle {
+  display: none;
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  font-size: 1.2rem;
+  padding: 6px 8px;
+  cursor: pointer;
 }
-#right {
-	width: 48%;
-	float: right;
+
+/* コンテナ — サイドバーは固定化（DOM内には残るが表示は固定） */
+#container {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
 }
-ul {
-	margin: 0 0 0 1em;
-	padding: 0;
+
+/* サイドバー（画面左端に固定） */
+#sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 260px;
+  height: 100vh;
+  background: #ffffff;
+  border-radius: 0 8px 8px 0;
+  padding: 20px 16px;
+  box-shadow: 2px 0 6px rgba(0,0,0,0.06);
+  overflow-y: auto;
+  z-index: 1000;
 }
-p {
-	margin: 1em 0;
-	color: #333;
+
+#sidebar .title {
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #333;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 6px;
 }
-img {
-	max-width: 100%;
-	height: auto;
-	border: 0;
+
+.side-list {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 16px 0;
 }
-hr {
-	border-width: 1px 0 0 0;
-	border-style: solid;
-	border-color: #ccc;
-	height: 1px;
+
+.side-list li {
+  margin: 8px 0;
 }
-a {
-	font-weight: normal;
-	color: #003366;
+
+.side-list a {
+  color: #0b66c3;
+  text-decoration: none;
+  display: inline-block;
+  padding: 6px 4px;
+  border-radius: 4px;
 }
-h1 {
-	font-size: 24px;
-	padding: 24px 0 0 0;
-	margin: 0;
+
+.side-list a:hover {
+  background: rgba(11,102,195,0.08);
 }
-h1 a {
-	font-weight: bold;
-	color: #8c0000;
-	text-decoration: none;
+
+/* オーバーレイ（小画面用、デフォルト非表示） */
+#sidebarOverlay {
+  display: none;
 }
-h1 a:hover {
-	text-decoration: underline;
+
+/* メインコンテンツ */
+main {
+  flex: 1;
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
 }
-h2 {
-	font-size: 22px;
-	margin: 0;
-	padding: 3px 0 4px 0;
-	border-bottom: 1px solid #F49909;
+
+/* レスポンシブ: 狭い画面ではオフキャンバスのサイドバーに切替 */
+@media (max-width: 800px) {
+  /* ボディ左余白を解除 */
+  body {
+    padding-left: 0;
+  }
+
+  /* トグルボタンを表示 */
+  #sidebarToggle {
+    display: inline-block;
+  }
+
+  /* コンテンツは縦並びに */
+  #container {
+    flex-direction: column;
+  }
+
+  /* サイドバーはオフキャンバス（デフォルト隠す） */
+  #sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    transform: translateX(-100%);
+    width: 260px;
+    height: 100vh;
+    border-radius: 0 8px 8px 0;
+    padding: 20px 16px;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.12);
+    transition: transform 0.25s ease;
+    will-change: transform;
+  }
+
+  /* ボディにクラスが付いていると表示 */
+  body.sidebar-open #sidebar {
+    transform: translateX(0);
+  }
+
+  /* オーバーレイ表示 */
+  #sidebarOverlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s;
+    z-index: 900;
+  }
+  body.sidebar-open #sidebarOverlay {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* サイドバーをコンテンツ内に戻すための外観調整（非固定表示と同様に見せたい場合は無効化） */
+  main {
+    width: 100%;
+  }
 }
-h3 {
-	font-size: 22px;
-	margin: 0;
-	padding: 3px 0 4px 0;
-}
-.side {
-	padding: 0 0 4px 0;
-}
-.side li {
-	margin-left: 5px;
-	list-style-type: none;
-}
-.side li a {
-	text-decoration: none;
-}
-.side li a:hover {
-	text-decoration: underline;
-}
-.title {
-	box-sizing: border-box;
-	margin: 10px 0;
-	font-weight: bold;
-	padding: 5px 20px;
-	color: #333;
-	background-color: #F4FCC4;
-	border: 1px solid #ccc;
-	border-radius: 20px;
-}
-footer {
-	padding-top: 14px;
-	height: 120px;
-	clear: both;
-	text-align: center;
-}
-footer a {
-	color: #444;
-}
-footer a:hover {
-	color: #003366;
-}
-blockquote {
-	border: 1px solid #ccc;
-	padding: 5px;
-	margin: 10px;
-}
-@media screen and (max-width: 767px) {
-#outer {
-	width: 100%;
-	padding: 0 10px;
-}
-#left, #right {
-	width: 100%;
-	float: none;
-	margin-bottom: 20px;
+
+/* レスポンシブ: 狭い画面ではサイドバーを常に表示する */
+@media (max-width: 800px) {
+  /* ボディ左余白を解除（サイドバーはコンテンツ内に表示） */
+  body {
+    padding-left: 0;
+  }
+
+  /* トグルボタンは非表示にする（常に表示するため不要） */
+  #sidebarToggle {
+    display: none;
+  }
+
+  /* オーバーレイは不要 */
+  #sidebarOverlay {
+    display: none;
+  }
+
+  /* レイアウトは縦並びに */
+  #container {
+    flex-direction: column;
+  }
+
+  /* サイドバーをページフローに戻して全幅表示 */
+  #sidebar {
+    position: static;
+    transform: none;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    transition: none;
+  }
+
+  /* メインはその下に来る */
+  main {
+    width: 100%;
+  }
 }
