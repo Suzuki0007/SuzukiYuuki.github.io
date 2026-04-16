@@ -1,111 +1,139 @@
 @charset "UTF-8";
 /* 基本レイアウト */
-* {box-sizing: border-box;}
+* {
+    box-sizing: border-box;
+}
+
 body {
-  margin: 0;
-  font-family: "Segoe UI", Roboto, "Hiragino Kaku Gothic ProN", "メイリオ", sans-serif;
-  background: #f0f2f5;
-  color: #222;
-  -webkit-font-smoothing: antialiased;
-  /* 固定サイドバー幅分を確保 */
-  padding-left: 260px;
-  transition: padding-left 0.2s ease;
+    margin: 0;
+    font-family: "Segoe UI", Roboto, "Hiragino Kaku Gothic ProN", "メイリオ", sans-serif;
+    background: #f0f2f5;
+    color: #222;
+    -webkit-font-smoothing: antialiased;
 }
 
-#outer {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-/* ヘッダー/フッター */
-header, footer {
-  text-align: center;
-  margin-bottom: 16px;
-}
-header h1 {margin: 0; font-size: 1.6rem;}
-footer {margin-top: 24px; font-size: 0.9rem; color: #666;}
-
-/* コンテナ — メイン */
-#container {
-  display: flex;
-  gap: 24px;
-  align-items: flex-start;
+/* サイドバー幅の定義（必要ならここだけ変更） */
+:root {
+    --sidebar-width: 260px;
 }
 
 /* サイドバー（画面左端に固定） */
 #sidebar {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 260px;
-  height: 100vh;
-  background: #ffffff;
-  border-radius: 0 8px 8px 0;
-  padding: 20px 16px;
-  box-shadow: 2px 0 6px rgba(0,0,0,0.06);
-  overflow-y: auto;
-  z-index: 1000;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: var(--sidebar-width);
+    height: 100vh;
+    background: #ffffff;
+    border-radius: 0 8px 8px 0;
+    padding: 20px 16px;
+    box-shadow: 2px 0 6px rgba(0,0,0,0.06);
+    overflow-y: auto;
+    z-index: 1000;
 }
 
-#sidebar .title {
-  font-weight: 700;
-  margin-bottom: 8px;
-  color: #333;
-  border-bottom: 1px solid #eee;
-  padding-bottom: 6px;
-}
+    #sidebar .title {
+        font-weight: 700;
+        margin-bottom: 8px;
+        color: #333;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 6px;
+    }
 
 .side-list {
-  list-style: none;
-  padding: 0;
-  margin: 8px 0 16px 0;
+    list-style: none;
+    padding: 0;
+    margin: 8px 0 16px 0;
 }
 
-.side-list li {
-  margin: 8px 0;
+    .side-list li {
+        margin: 8px 0;
+    }
+
+    .side-list a {
+        color: #0b66c3;
+        text-decoration: none;
+        display: inline-block;
+        padding: 6px 4px;
+        border-radius: 4px;
+    }
+
+        .side-list a:hover {
+            background: rgba(11,102,195,0.08);
+        }
+
+/* #outer をサイドバーの直右に配置する（サイドバー幅分を左マージン） */
+#outer {
+    /* 幅は利用可能領域からサイドバー幅を引いた分を使用 */
+    width: calc(100% - var(--sidebar-width));
+    max-width: 1100px;
+    margin-left: var(--sidebar-width); /* ここで右へずらす */
+    margin-right: 0;
+    padding: 20px;
 }
 
-.side-list a {
-  color: #0b66c3;
-  text-decoration: none;
-  display: inline-block;
-  padding: 6px 4px;
-  border-radius: 4px;
+/* ヘッダー/フッター */
+header, footer {
+    text-align: center;
+    margin-bottom: 16px;
 }
 
-.side-list a:hover {
-  background: rgba(11,102,195,0.08);
+    header h1 {
+        margin: 0;
+        font-size: 1.6rem;
+    }
+
+footer {
+    margin-top: 24px;
+    font-size: 0.9rem;
+    color: #666;
 }
 
-/* メインコンテンツ */
+/* メインコンテンツ内カード */
 main {
-  flex: 1;
-  background: #ffffff;
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
 }
 
-/* 小さい画面でもサイドバーを表示（幅を縮める） */
+/* レスポンシブ（狭い画面でもサイドバー表示） */
 @media (max-width: 800px) {
-  body {
-    padding-left: 220px; /* サイドバー幅に合わせる */
-  }
-  #sidebar {
-    width: 220px;
-  }
+    :root {
+        --sidebar-width: 220px;
+    }
+
+    #outer {
+        width: calc(100% - var(--sidebar-width));
+        margin-left: var(--sidebar-width);
+    }
+
+    #sidebar {
+        width: var(--sidebar-width);
+        padding: 16px;
+    }
 }
 
-/* より小さい画面では更に幅を詰める */
 @media (max-width: 480px) {
-  body {
-    padding-left: 180px;
-  }
-  #sidebar {
-    width: 180px;
-    padding: 12px;
-  }
-  #sidebar .title { font-size: 0.95rem; }
-  .side-list a { font-size: 0.95rem; }
-}  
+    :root {
+        --sidebar-width: 180px;
+    }
+
+    #outer {
+        width: calc(100% - var(--sidebar-width));
+        margin-left: var(--sidebar-width);
+    }
+
+    #sidebar {
+        width: var(--sidebar-width);
+        padding: 12px;
+    }
+
+        #sidebar .title {
+            font-size: 0.95rem;
+        }
+
+    .side-list a {
+        font-size: 0.95rem;
+    }
+}
