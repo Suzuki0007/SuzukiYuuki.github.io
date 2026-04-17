@@ -2,39 +2,25 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>鈴木裕稀のポートフォリオサイト</title>
+    <title>あなたのＨＰタイトル</title>
     <meta name="keywords" content="ページのキーワードA,B,C">
     <meta name="description" content="ページの説明">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <!-- サイドバーを body 直下に配置（画面左端に固定するため） -->
-    <aside id="sidebar">
-        <nav>
-            <div class="title">Menu</div>
-            <ul class="side-list">
-                <li><a href="#">ホーム</a></li>
-                <li><a href="#">作品一覧</a></li>
-                <li><a href="#">ブログ</a></li>
-                <li><a href="#">プロフィール</a></li>
-            </ul>
-            <div class="title">その他</div>
-            <ul class="side-list">
-                <li><a href="#">連絡先</a></li>
-                <li><a href="#">SNS</a></li>
-            </ul>
-        </nav>
-    </aside>
-
     <div id="outer">
         <header>
-            <h1>鈴木裕稀のポートフォリオサイト</h1>
+            <div id="header-container">
+                <div id="head-inner">
+                    <h1>あなたのＨＰタイトル</h1>
+                    <p class="description">あなたのＨＰの説明文</p>
+                </div>
+            </div>
         </header>
-
-        <div id="container">
+        <div id="content-wrapper">
             <main>
-                <div id="text">
+                <div id="inner">
                     <h2>記事ページ見出し・大</h2>
                     <p>文章あれこれ</p>
                     <h3>記事ページ見出し・中</h3>
@@ -43,8 +29,18 @@
                     <p>文章あれこれ</p>
                 </div>
             </main>
+            <aside>
+                <div id="middle-inner">
+                    <div class="side-title">menu</div>
+                    <div class="side">
+                        <ul>
+                            <li>記事ページへのリンク</li>
+                            <li>記事ページへのリンク</li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
         </div>
-
         <footer>© 2010 あなたのホームページ</footer>
     </div>
 </body>

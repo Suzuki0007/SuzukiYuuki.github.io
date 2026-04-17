@@ -1,102 +1,210 @@
 @charset "UTF-8";
-/* 基本レイアウト */
-* {box-sizing: border-box;}
+
 body {
-  margin: 0;
-  font-family: "Segoe UI", Roboto, "Hiragino Kaku Gothic ProN", "メイリオ", sans-serif;
-  background: #f0f2f5;
-  color: #222;
-  -webkit-font-smoothing: antialiased;
+    margin: 0;
+    padding: 0;
+    font-family: "游ゴシック Medium", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+    line-height: 1.6;
+    font-size: 16px;
 }
 
-/* サイドバー幅の定義（必要ならここだけ変更） */
-:root {
-  --sidebar-width: 260px;
+#header-container {
+    margin: 0 auto;
+    width: 694px;
 }
 
-/* サイドバー（画面左端に固定） */
-#sidebar {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: var(--sidebar-width);
-  height: 100vh;
-  background: #ffffff;
-  border-radius: 0 8px 8px 0;
-  padding: 20px 16px;
-  box-shadow: 2px 0 6px rgba(0,0,0,0.06);
-  overflow-y: auto;
-  z-index: 1000;
+header {
+    background-color: #214555;
 }
 
-#sidebar .title {
-  font-weight: 700;
-  margin-bottom: 8px;
-  color: #333;
-  border-bottom: 1px solid #eee;
-  padding-bottom: 6px;
+#head-inner {
+    padding: 25px 0;
 }
 
-.side-list {
-  list-style: none;
-  padding: 0;
-  margin: 8px 0 16px 0;
+h1 {
+    font-size: 26px;
+    font-weight: bold;
+    padding: 10px 0 0 0;
+    margin: 0;
+    color: #f3e6d2;
 }
 
-.side-list li { margin: 8px 0; }
+    h1 a {
+        font-weight: bold;
+        color: #f3e6d2;
+        text-decoration: none;
+    }
 
-.side-list a {
-  color: #0b66c3;
-  text-decoration: none;
-  display: inline-block;
-  padding: 6px 4px;
-  border-radius: 4px;
-}
-.side-list a:hover { background: rgba(11,102,195,0.08); }
+        h1 a:hover {
+            color: #e8f3f9;
+            text-decoration: none;
+        }
 
-/* #outer をサイドバーの直右に配置する（サイドバー幅分を左マージン） */
-#outer {
-  /* 幅は利用可能領域からサイドバー幅を引いた分を使用 */
-  width: calc(100% - var(--sidebar-width));
-  max-width: 1100px;
-  margin-left: var(--sidebar-width); /* ここで右へずらす */
-  margin-right: 0;
-  padding: 20px;
+.description {
+    line-height: 1.2;
+    color: #f3f2eb;
+    margin: 0.5em 0 1em 0;
 }
 
-/* ヘッダー/フッター */
-header, footer {
-  text-align: center;
-  margin-bottom: 16px;
+h2 {
+    font-size: 22px;
+    margin: 0;
+    padding: 4px 0;
+    border-bottom: 1px solid #999;
 }
-header h1 { margin: 0; font-size: 1.6rem; }
-footer { margin-top: 24px; font-size: 0.9rem; color: #666; }
 
-/* メインコンテンツ内カード */
+#content-wrapper {
+    margin: 0 auto;
+    width: 694px;
+}
+
 main {
-  background: #ffffff;
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    color: #333;
 }
 
-/* レスポンシブ（狭い画面でもサイドバー表示） */
-@media (max-width: 800px) {
-  :root { --sidebar-width: 220px; }
-  #outer {
-    width: calc(100% - var(--sidebar-width));
-    margin-left: var(--sidebar-width);
-  }
-  #sidebar { width: var(--sidebar-width); padding: 16px; }
+#inner {
+    padding: 20px 0 0 0;
 }
 
-@media (max-width: 480px) {
-  :root { --sidebar-width: 180px; }
-  #outer {
-    width: calc(100% - var(--sidebar-width));
-    margin-left: var(--sidebar-width);
-  }
-  #sidebar { width: var(--sidebar-width); padding: 12px; }
-  #sidebar .title { font-size: 0.95rem; }
-  .side-list a { font-size: 0.95rem; }
+ul {
+    margin: 0 0 0 1em;
+    padding: 0;
+}
+
+li {
+    list-style: disc;
+}
+
+p {
+    margin: 1em 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border: 0;
+}
+
+hr {
+    border-width: 1px 0 0 0;
+    border-style: solid;
+    border-color: #ccc;
+    height: 1px;
+}
+
+a {
+    font-weight: normal;
+}
+
+aside {
+}
+
+#middle-inner {
+    padding: 20px 0 20px 0;
+}
+
+.side-title {
+    padding: 7px 16px 7px 16px;
+    background-color: #f1f1f1;
+    color: #333;
+    font-weight: bold;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.side {
+    margin: 0 0 10px 0;
+    padding: 2px 8px 8px 7px;
+    background-color: #fcfcfc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+    .side ul {
+        margin: 0 0 0 10px;
+        padding: 0;
+    }
+
+    .side li {
+        list-style: none;
+        margin-bottom: 0.5em;
+    }
+
+        .side li a {
+            text-decoration: none;
+            color: #214555;
+        }
+
+            .side li a:hover {
+                text-decoration: underline;
+            }
+
+footer {
+    font-size: 15px;
+    height: 100px;
+    clear: both;
+    text-align: center;
+}
+
+blockquote {
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin: 10px;
+}
+
+@media screen and (max-width: 767px) {
+    #header-container {
+        margin: 0;
+        width: 100%;
+    }
+
+    header {
+    }
+
+    #head-inner {
+        padding: 25px 10px;
+        background-color: #214555;
+    }
+
+    .description {
+    }
+
+    #content-wrapper {
+        margin: 0;
+        width: 100%;
+    }
+
+    main {
+        width: 100%;
+        color: #333;
+    }
+
+    #inner {
+        padding: 20px 10px 0 10px;
+    }
+
+    aside {
+        width: 100%;
+    }
+
+    #middle-inner {
+        padding: 10px 10px 20px 10px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    h3 {
+        font-size: 16px;
+    }
+
+    h4 {
+        font-size: 14px;
+    }
 }
