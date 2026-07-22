@@ -9,8 +9,26 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
+    <script>
+        menu = document.gitElementById("side-menu");
+        button = document.getElementById("menu-btn");
+
+        button.addEventListener("click", function()
+        {
+            menu.classList.toggle("open");
+        });
+    </script>
+    <nav id="side-menu">
+        <ul>
+            <li><a href="#">ホーム</a></li>
+            <li><a href="#">プロフィール</a></li>
+            <li><a href="#">お問い合わせ</a></li>
+        </ul>
+    </nav>
     <div id="outer">
         <header>
+            <button id="menu-btn">☰</button>
+
             <div id="header-container">
                 <div id="head-inner">
                     <h1>あなたのＨＰタイトル</h1>
