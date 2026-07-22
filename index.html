@@ -2,22 +2,14 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>あなたのＨＰタイトル</title>
+    <title>鈴木裕稀</title>
     <meta name="keywords" content="ページのキーワードA,B,C">
     <meta name="description" content="ページの説明">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <script>
-        menu = document.gitElementById("side-menu");
-        button = document.getElementById("menu-btn");
 
-        button.addEventListener("click", function()
-        {
-            menu.classList.toggle("open");
-        });
-    </script>
     <nav id="side-menu">
         <ul>
             <li><a href="#">ホーム</a></li>
@@ -25,41 +17,76 @@
             <li><a href="#">お問い合わせ</a></li>
         </ul>
     </nav>
+    <div id="overlay"> </div>
     <div id="outer">
         <header>
             <button id="menu-btn">☰</button>
-
             <div id="header-container">
                 <div id="head-inner">
-                    <h1>あなたのＨＰタイトル</h1>
-                    <p class="description">あなたのＨＰの説明文</p>
+                    <h1>鈴木裕稀</h1>
+                    <p class="description">ポートフォリオ</p>
                 </div>
             </div>
         </header>
         <div id="content-wrapper">
             <main>
                 <div id="inner">
-                    <h2>記事ページ見出し・大</h2>
-                    <p>文章あれこれ</p>
-                    <h3>記事ページ見出し・中</h3>
-                    <p>文章あれこれ</p>
-                    <h4>記事ページ見出し・小</h4>
+                    <h2>自己紹介</h2>
+                    <p>アミューズメントメディア総合学院ゲームクリエイター学科プログラマー専攻2年、</p>
+                    <p>鈴木裕稀です。</p>
+                    <h3>プロフィール</h3>
+                    <h4>基本情報</h4>
+                    <p>氏名　　　　　: 鈴木 裕稀(すずき ゆうき)</p>
+                    <p>生年月日　　　: 2000年6月8日</p>
+                    <p>
+                        在籍校　　　　:
+                        <a class="school-link" href="https://www.amgakuin.co.jp/?gclid=Cj0KCQjwtrSLBhCLARIsACh6Rmj-QQGKJq-9UO4rbP_MuwDotyjBTmgKt4EFeL_fIiELfEnhLoS7EGAaAhITEALw_wcB" target="_blank">
+                            アミューズメントメディア総合学院
+                        </a>
+
+                        <a class="department-link" href="https://www.amgakuin.co.jp/course/game-director" target="_blank">
+                           ゲームクリエイター学科
+                        </a>
+                    </p>
+                    <h5>記事ページ見出し・小</h5>
                     <p>文章あれこれ</p>
                 </div>
             </main>
-            <aside>
-                <div id="middle-inner">
-                    <div class="side-title">menu</div>
-                    <div class="side">
-                        <ul>
-                            <li>記事ページへのリンク</li>
-                            <li>記事ページへのリンク</li>
-                        </ul>
-                    </div>
-                </div>
-            </aside>
         </div>
-        <footer>© 2010 あなたのホームページ</footer>
     </div>
+    <script>
+        menu = document.getElementById("side-menu");// サイドメニュー
+        button = document.getElementById("menu-btn");// メニューボタン
+        overlay = document.getElementById("overlay");// 背景を暗くする
+
+        // メニューボタンをクリックしたときの処理
+        button.addEventListener("click", () => {
+        // サイドメニューの表示・非表示を切り替える
+        menu.classList.toggle("open");
+        // 背景を暗くかどうかを切り替える
+        overlay.classList.toggle("show");
+
+        // メニューボタンの表示を切り替える
+        if(menu.classList.contains("open")) {
+        // サイドメニューが表示されている場合は「✕」にする
+        button.textContent = "✕";
+        } 
+        else {
+        // サイドメニューが非表示の場合は「☰」にする
+        button.textContent = "☰";
+        }
+        });
+
+        // 背景を暗くする部分をクリックしたときの処理
+        overlay.addEventListener("click", () => {
+        // サイドメニューを非表示にする
+            menu.classList.remove("open");
+        // 背景を暗くする部分を非表示にする
+            overlay.classList.remove("show");
+        // メニューボタンの表示を「☰」にする
+            button.textContent = "☰";
+        });
+    </script>
 </body>
+
 </html>
