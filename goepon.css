@@ -283,12 +283,12 @@ blockquote {
     }
 
 #side-menu {
-    z-index: 999;
+    z-index: 1000;
 }
 
 /*ボタンは一番前*/
 #menu-btn {
-    z-index: 1000;
+    z-index: 1001;
 }
 
 .goepon-video {
