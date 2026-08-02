@@ -1,103 +1,158 @@
 @charset "UTF-8";
 
-/* ページ全体のスタイル */
+/* ===========================
+   ページ全体
+=========================== */
+
+/* ページ全体の設定 */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: "游ゴシック Medium", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
-    line-height: 1.6;
-    font-size: 16px;
+    margin: 0; /* 外側の余白をなくす */
+    padding: 0; /* 内側の余白をなくす */
+    font-family: "游ゴシック Medium", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif; /* フォント */
+    line-height: 1.6; /* 行間 */
+    font-size: 16px; /* 基本文字サイズ */
 }
 
-/* ヘッダーのスタイル */
+/* ===========================
+   ヘッダー
+=========================== */
+
+/* ヘッダーの横幅 */
 #header-container {
-    margin: 0 auto;
-    width: 694px;
+    margin: 0 auto; /* 中央寄せ */
+    width: 694px; /* 横幅 */
 }
 
-/* メインコンテンツのスタイル */
+/* ヘッダー背景 */
 header {
-    background-color: #214555;
+    background-color: #214555; /* 背景色 */
 }
 
-/* ヘッダー内部のスタイル */
+/* ヘッダー内の余白 */
 #head-inner {
-    padding: 25px 0;
-    text-align: center;
+    padding: 25px 0; /* 上下25px */
+    text-align: center; /* 中央揃え */
 }
 
 /* タイトル */
 h1 {
-    font-size: 60px;
-    font-weight: bold;
-    padding: 10px 0 0 0;
-    margin: 0;
-    color: #f3e6d2;
+    font-size: 60px; /* 文字サイズ */
+    font-weight: bold; /* 太字 */
+    padding: 10px 0 0 0; /* 上だけ余白 */
+    margin: 0; /* 外側余白なし */
+    color: #f3e6d2; /* 文字色 */
 }
 
     /* タイトルのリンク */
     h1 a {
-        font-weight: bold;
-        color: #f3e6d2;
-        text-decoration: none;
+        font-weight: bold; /* 太字 */
+        color: #f3e6d2; /* 文字色 */
+        text-decoration: none; /* 下線なし */
     }
 
-        /* タイトルのリンクのホバー時のスタイル */
+        /* タイトルリンクにカーソルを合わせた時 */
         h1 a:hover {
-            color: #e8f3f9;
+            color: #e8f3f9; /* 色変更 */
             text-decoration: none;
         }
 
+/* サブタイトル */
 .description {
-    font-size: 20px;
-    line-height: 1.2;
-    color: #f3f2eb;
-    margin: 0.5em 0 1em 0;
+    font-size: 20px; /* 文字サイズ */
+    line-height: 1.2; /* 行間 */
+    color: #f3f2eb; /* 文字色 */
+    margin: 0.5em 0 1em 0; /* 外側余白 */
 }
 
+/* ===========================
+   見出し
+=========================== */
+
+/* 自己紹介 */
 h2 {
     font-size: 40px;
-    margin: 0;
-    padding: 4px 0;
+    margin: 0;/* 外側余白 */
+    padding: 4px 0;/* 内側余白 */
 }
 
+/* プロフィール */
 h3 {
     font-size: 30px;
     margin: 0;
     padding: 4px 0;
 }
 
-#content-wrapper {
-    margin: 0 auto;
-    width: 694px;
+/* 基本情報 */
+h4 {
+    font-size: 20px;
+    margin: 0;
+    padding: 4px 0;
 }
 
+h5 {
+    font-size: 25px;
+    margin: 0;
+    padding: 4px 0;
+}
+
+/* ===========================
+   メインコンテンツ
+=========================== */
+
+/* コンテンツ全体 */
+#content-wrapper {
+    margin: 0 auto; /* 中央寄せ */
+    width: 1350px; /* 横幅 */
+}
+
+/* メイン文字色 */
 main {
     color: #333;
 }
 
+/* コンテンツの余白 */
 #inner {
-    padding: 20px 0 0 0;
+    padding: 20px 0 0 275px; /* 左に200px余白 */
 }
 
+/* ===========================
+   リスト
+=========================== */
+
+/* ul */
 ul {
     margin: 0 0 0 1em;
     padding: 0;
 }
 
+/* li */
 li {
     list-style: disc;
 }
 
+/* ===========================
+   段落
+=========================== */
+
+/* 段落 */
 p {
     margin: 1em 0;
 }
 
+/* ===========================
+   画像
+=========================== */
+
+/* 全画像共通 */
 img {
-    max-width: 100%;
-    height: auto;
+    max-width: 100%; /* 親要素を超えない */
+    height: auto; /* 縦横比維持 */
     border: 0;
 }
+
+/* ===========================
+   区切り線
+=========================== */
 
 hr {
     border-width: 1px 0 0 0;
@@ -106,94 +161,49 @@ hr {
     height: 1px;
 }
 
+/* ===========================
+   リンク
+=========================== */
+
+/* 全リンク */
 a {
     font-weight: normal;
 }
 
-aside {
-}
+/* ===========================
+   サイドメニュー
+=========================== */
 
-#middle-inner {
-    padding: 20px 0 20px 0;
-}
-
-.side-title {
-    padding: 7px 16px 7px 16px;
-    background-color: #f1f1f1;
-    color: #333;
-    font-weight: bold;
-    border: 1px solid #ccc;
-    margin-bottom: 10px;
-    border-radius: 5px;
-}
-
-.side {
-    margin: 0 0 10px 0;
-    padding: 2px 8px 8px 7px;
-    background-color: #fcfcfc;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-}
-
-    .side ul {
-        margin: 0 0 0 10px;
-        padding: 0;
-    }
-
-    .side li {
-        list-style: none;
-        margin-bottom: 0.5em;
-    }
-
-        .side li a {
-            text-decoration: none;
-            color: #214555;
-        }
-
-            .side li a:hover {
-                text-decoration: underline;
-            }
-
-footer {
-    font-size: 15px;
-    height: 100px;
-    clear: both;
-    text-align: center;
-}
-
-blockquote {
-    border: 1px solid #ccc;
-    padding: 5px;
-    margin: 10px;
-}
-
-/* サイドメニュー 全画面*/
+/* サイドメニュー本体 */
 #side-menu {
-    position: fixed;
+    position: fixed; /* 固定表示 */
     top: 0;
     left: 0;
-    width: 250px;
-    height: 100vh;
-    background-color: #214555;
-    transition: left 0.3s ease;
+    width: 250px; /* 横幅 */
+    height: 100vh; /* 高さ */
+    background-color: #214555; /* 背景色 */
+    transition: left 0.3s ease; /* 開閉アニメーション */
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 50px;
+    flex-direction: column; /* 縦並び */
+    align-items: center; /* 中央揃え */
+    padding-top: 50px; /* 上余白 */
 }
 
+    /* メニューリスト */
     #side-menu ul {
         margin: 0;
         padding: 0;
         width: 100%;
     }
 
+    /* メニュー項目 */
     #side-menu li {
         list-style: none;
         text-align: center;
         margin: 15px 0;
     }
 
+/* ポートフォリオタイトル */
 .side-header {
     width: 100%;
     margin: 20px 0;
@@ -204,7 +214,7 @@ blockquote {
     font-weight: bold;
 }
 
-/*メニューボタン全画面時*/
+/* メニューを開くボタン */
 #menu-btn {
     display: none;
     position: fixed;
@@ -213,57 +223,62 @@ blockquote {
     z-index: 1000;
 }
 
+/* メニューが開いた状態 */
 #side-menu.open {
     left: 0;
 }
 
-#side-menu ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+/* メニューリンク */
+#side-menu li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
 }
 
-#side-menu li {
-    text-align: center;
-    margin: 15px 0;
-}
-
-    #side-menu li a {
-        display: block;
-        color: white;
-        text-decoration: none;
-        font-size: 18px;
+    /* メニューリンクにカーソル */
+    #side-menu li a:hover {
+        color: #ffd966;
     }
 
-        #side-menu li a:hover {
-            color: #ffd966;
-        }
+/* ===========================
+   学校リンク
+=========================== */
 
+/* 学校名リンク */
 .school-link {
     text-decoration: none;
     color: #1d50a2;
 }
 
+    /* 学校リンクにカーソル */
     .school-link:hover {
         text-decoration: underline;
     }
 
+/* 学科リンク */
 .department-link {
     text-decoration: none;
     margin-left: 20px;
     color: #1d50a2;
 }
 
+    /* 学科リンクにカーソル */
     .department-link:hover {
         text-decoration: underline;
     }
 
+/* 学校住所 */
 .school-address {
     margin-left: 120px;
     margin-top: -10px;
     color: #130012;
     font-size: 15px;
 }
+
+/* ===========================
+   背景オーバーレイ
+=========================== */
 
 /* 背景を暗くする */
 #overlay {
@@ -272,114 +287,151 @@ blockquote {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0,0,0,0.5);
     display: none;
     z-index: 999;
 }
 
-    /* 表示状態 */
-#overlay.show{
-    display: block;
-}
+    /* オーバーレイ表示 */
+    #overlay.show {
+        display: block;
+    }
 
-#side-menu{
+/* メニューの重なり順 */
+#side-menu {
     z-index: 1000;
 }
 
-/*ボタンは一番前*/
-#menu-btn{
+/* ボタンを最前面に */
+#menu-btn {
     z-index: 1001;
 }
 
-.content-box {
-    display: flex; /* 横並びにする */
-    align-items: flex-start; /* 上揃え */
-    gap: 20px; /* 余白を調整 */
+/* ===========================
+   画像と文章
+=========================== */
+
+/*全作品を横並び*/
+.game-list {
+    display:flex;
+    flex-wrap: wrap;
+    gap: 40px;
 }
 
-.content-box p {
-    flex: 1; /* 残りの幅を文章が占める */
+/*1作品*/
+.game-card {
+    width: 500px;
 }
 
-.content-box img{
-    width: 300px;
-    height: auto;
-    border-radius: 8px;
+    .game-card img {
+        height:auto;
+        border-radius: 8px; /*四つ角を丸める*/
+        margin-bottom: 20px;
+    }
+
+/* 職歴のインデント */
+.indent {
+    margin-left: 108px;
 }
 
-@media screen and (max-width: 1200px) {
+/* ゲーム作品 */
+.game-sakuhinn {
+    margin-bottom: 20px;
+}
 
-    /* ☰を表示 */
+/* ゲームタイトル */
+.game-title span {
+    display: block;
+}
+
+/* 作成時期 */
+.seisakujiki {
+    margin-left: 200px;
+}
+
+/* ゲームのタイトル名 */
+.game-main {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+/* ゲームのジャンル */
+.janru {
+    margin-left: 180px;
+}
+
+/* ゲームのジャンルのサブタイトル */
+.janru-sub-goepon {
+    margin-top: 0;
+    margin-left: 130px;
+}
+
+/* 制作期間 */
+.kikann {
+    margin-left: 210px;
+}
+
+/*日にち*/
+.kikann-sub {
+    margin-top: 0;
+    margin-left: 130px;
+}
+
+.ninzu {
+    margin-left: 210px;
+}
+
+.ninzu-sub {
+    margin-top: 0;
+    margin-left: 130px;
+}
+
+/* ===========================
+   レスポンシブ
+=========================== */
+
+@media screen and (max-width:1200px) {
+
+    /* メニューボタン表示 */
     #menu-btn {
-        display:block;
+        display: block;
     }
 
-    /* サイドメニューを非表示にする */
+    /* メニューを画面外へ */
     #side-menu {
-        left:-250px;
+        left: -250px;
     }
 
-    /* 開いた状態 */
-    #side-menu.open {
-        left: 0;
-    }
+        /* メニュー表示 */
+        #side-menu.open {
+            left: 0;
+        }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width:767px) {
+
+    /* ヘッダー幅 */
     #header-container {
-        margin: 0;
         width: 100%;
     }
 
-    header {
-    }
-
+    /* ヘッダー内余白 */
     #head-inner {
         padding: 25px 10px;
-        background-color: #214555;
     }
 
-    .description {
-    }
-
+    /* コンテンツ幅 */
     #content-wrapper {
-        margin: 0;
         width: 100%;
     }
 
+    /* メイン */
     main {
         width: 100%;
-        color: #333;
     }
 
+    /* コンテンツ余白 */
     #inner {
         padding: 20px 10px 0 10px;
-    }
-
-    aside {
-        width: 100%;
-    }
-
-    #middle-inner {
-        padding: 10px 10px 20px 10px;
-    }
-
-    h1 {
-        font-size: 20px;
-    }
-
-    h2 {
-        font-size: 18px;
-    }
-
-    h3 {
-        font-size: 16px;
-    }
-
-    h4 {
-        font-size: 14px;
-    }
-    h5 {
-        font-size: 12px;
     }
 }
