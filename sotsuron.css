@@ -69,7 +69,7 @@ h1 {
 =========================== */
 
 h2 {
-    font-size: 40px;
+    font-size: 35px;
     margin: 0; /* 外側余白 */
     padding: 4px 0; /* 内側余白 */
     text-decoration: underline;
@@ -242,41 +242,6 @@ a {
     }
 
 /* ===========================
-   学校リンク
-=========================== */
-
-/* 学校名リンク */
-.school-link {
-    text-decoration: none;
-    color: #1d50a2;
-}
-
-    /* 学校リンクにカーソル */
-    .school-link:hover {
-        text-decoration: underline;
-    }
-
-/* 学科リンク */
-.department-link {
-    text-decoration: none;
-    margin-left: 20px;
-    color: #1d50a2;
-}
-
-    /* 学科リンクにカーソル */
-    .department-link:hover {
-        text-decoration: underline;
-    }
-
-/* 学校住所 */
-.school-address {
-    margin-left: 120px;
-    margin-top: -10px;
-    color: #130012;
-    font-size: 15px;
-}
-
-/* ===========================
    背景オーバーレイ
 =========================== */
 
@@ -308,173 +273,24 @@ a {
 }
 
 /* ===========================
-   画像と文章
+   卒論ページ
 =========================== */
 
-/*全作品を横並び*/
-.game-list {
-    display:flex;
-    flex-wrap: wrap;
-    gap: 40px;
-}
-
-/*1作品*/
-.game-card {
-    width: 500px;
-}
-
-    .game-card img {
-        height:auto;
-        border-radius: 8px; /*四つ角を丸める*/
-        margin-bottom: 20px;
-    }
-
-/* 職歴のインデント */
-.indent {
-    margin-left: 108px;
-}
-
-/* ゲーム作品 */
-.game-sakuhinn {
-    margin-bottom: 20px;
-}
-
-/* ゲームタイトル */
-.game-title span {
-    display: block;
-}
-
-/* 作成時期 */
-.seisakujiki {
-    margin-left: 200px;
-}
-
-/* ゴエポンのタイトル名 */
-.game-main-goepon {
-    margin-left: 20px;
-    margin-bottom: 20px;
-}
-
-/* Magnetic Jumperのタイトル名 */
-.game-main-mag {
-    margin-left: 160px;
-    margin-bottom: 20px;
-}
-
-/* ゲームのジャンル */
-.janru {
-    margin-left: 180px;
-}
-
-/* ゴエポンのジャンルタイトル */
-.janru-sub-goepon {
-    margin-top: 0;
-    margin-left: 130px;
-}
-
-/* Magnetic Jumperのジャンルタイトル */
-.janru-sub-mag {
-    margin-top: 0;
-    margin-left: 160px;
-}
-
-/* 制作期間 */
-.kikann {
-    margin-left: 210px;
-}
-
-/*日にち*/
-.kikann-sub {
-    margin-top: 0;
-    margin-left: 130px;
-}
-
-/* 制作人数 */
-.ninzu {
-    margin-left: 210px;
-}
-
-/* 人数 */
-.ninzu-sub {
-    margin-top: 0;
-    margin-left: 80px;
-}
-
-/* 担当箇所 */
-.tantou {
-    margin-left: 210px;
-}
-
-/* ゴエポンの担当箇所 */
-.tantou-sub-goepon {
-    margin-top: 0;
-    margin-left: 50px;
-}
-
-/* Magnetic Jumperの担当箇所 */
-.tantou-sub-mag {
-    margin-top: 0;
-    margin-left: 60px;
-}
-
-/* 開発環境 */
-.kaihatu {
-    margin-left: 210px;
-}
-
-/* ゴエポンの開発環境 */
-.kaihatu-sub-goepon {
-    margin-top: 0;
-    margin-left: 90px;
-}
-
-/* Magnetic Jumperの開発環境 */
-.kaihatu-sub-mag {
-    margin-top: 0;
-    margin-left: 110px;
-}
-
-/* ゴエポンの詳細ボタン */
-.detail-button-goepon {
+.sotsuron {
     display: inline-block;
-    margin-top: 20px;
-    margin-left: 130px;
-    margin-bottom: 40px;
-    padding: 10px 80px;
+    padding: 10px 24px;
+    margin-top: 100px;
+    margin-left: 350px;
     background-color: #214555;
-    color: #fff;
+    color: #ffffff;
     text-decoration: none;
-    border-radius: 4px;
     font-weight: bold;
-    transition: 0.3s;
+    border-radius: 8px;
+    transition: background-color 0.3s;
 }
-
-    /* ゴエポンの詳細ボタンにカーソル */
-    .detail-button-goepon:hover {
-        background-color: #1a3a4a;
+    .sotsuron:hover {
+        background-color: #2f6278;
     }
-
-.detail-button-mag {
-    display: inline-block;
-    margin-top: 20px;
-    margin-left: 130px;
-    margin-bottom: 40px;
-    padding: 10px 80px;
-    background-color: #214555;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 4px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-    /* Magnetic Jumperの詳細ボタンにカーソル */
-    .detail-button-mag:hover {
-        background-color: #1a3a4a;
-    }
-
-/* ===========================
-   レスポンシブ
-=========================== */
 
 @media screen and (max-width:1200px) {
 

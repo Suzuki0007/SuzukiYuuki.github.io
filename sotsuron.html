@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>卒論</title>
+    <meta name="keywords" content="ページのキーワードA,B,C">
+    <meta name="description" content="ページの説明">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="sotsuron.css">
+</head>
+<body>
+    <nav id="side-menu">
+        <p class="side-header">卒業論文<br>ポートフォリオ</p>
+        <ul>
+            <li><a href="index.html">ホーム</a></li>
+            <li><a href="goepon.html">
+                    冬季制作
+                    <br>
+                        あぶないっ！ゴエポン！
+                        <br>
+                        ～お宝奪還伝～
+                        <br />
+                    <br />
+                </a>
+            </li>
+            <li><a href="sotsuron.html">卒業論文</a></li>
+        </ul>
+    </nav>
+    <div id="overlay"> </div>
+    <div id="outer">
+        <header>
+            <button id="menu-btn">☰</button>
+            <div id="header-container">
+                <div id="head-inner">
+                    <h1>卒業論文</h1>
+                    <p class="description">ポートフォリオ</p>
+                </div>
+            </div>
+        </header>
+        <div id="content-wrapper">
+            <main>
+                <div id="inner">
+                    <h2>小型AIコンピュータJetson Nanoを用いた宇宙線観測装置の開発</h2>
+                    <a class="sotsuron" href="https://drive.google.com/file/d/1mR0y2aI8uAmtnirzyNzoQUszErAr0INW/view?usp=drive_link" target="_blank">詳細はこちら</a>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script>
+        menu = document.getElementById("side-menu");// サイドメニュー
+        button = document.getElementById("menu-btn");// メニューボタン
+        overlay = document.getElementById("overlay");// 背景を暗くする
+
+        // メニューボタンをクリックしたときの処理
+        button.addEventListener("click", () => {
+        // サイドメニューの表示・非表示を切り替える
+        menu.classList.toggle("open");
+        // 背景を暗くかどうかを切り替える
+        overlay.classList.toggle("show");
+
+        // メニューボタンの表示を切り替える
+        if(menu.classList.contains("open")) {
+        // サイドメニューが表示されている場合は「✕」にする
+        button.textContent = "✕";
+        } 
+        else {
+        // サイドメニューが非表示の場合は「☰」にする
+        button.textContent = "☰";
+        }
+        });
+
+        // 背景を暗くする部分をクリックしたときの処理
+        overlay.addEventListener("click", () => {
+        // サイドメニューを非表示にする
+            menu.classList.remove("open");
+        // 背景を暗くする部分を非表示にする
+            overlay.classList.remove("show");
+        // メニューボタンの表示を「☰」にする
+            button.textContent = "☰";
+        });
+    </script>
+</body>
+
+</html>
