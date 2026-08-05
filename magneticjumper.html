@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Magnetic Jumper</title>
+    <meta name="keywords" content="ページのキーワードA,B,C">
+    <meta name="description" content="ページの説明">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="magneticjumper.css">
+</head>
+<body>
+
+    <nav id="side-menu">
+        <p class="side-header">鈴木裕稀<br>ポートフォリオ</p>
+        <ul>
+            <li><a href="index.html">ホーム</a></li>
+            <li>
+                <a href="goepon.html">
+                    冬季制作
+                    <br>
+                    あぶないっ！ゴエポン！
+                    <br>
+                    ～お宝奪還伝～
+                </a>
+            </li>
+            <li>
+                <a href="magneticjumper.html">
+                    夏季制作
+                    <br>
+                    Magnetic Jumper
+                    <br />
+                </a>
+            </li>
+            <li><a href="sotsuron.html">卒業論文</a></li>
+        </ul>
+    </nav>
+    <div id="overlay"> </div>
+    <div id="outer">
+        <header>
+            <button id="menu-btn">☰</button>
+            <div id="header-container">
+                <div id="head-inner">
+                    <h1>Magnetic Jumper</h1>
+                    <p class="description">ポートフォリオ</p>
+                </div>
+            </div>
+        </header>
+        <div id="content-wrapper">
+            <main>
+                <div id="inner">
+                    <h2>概要</h2>
+                    <div class="overview-box">
+                        <img src="res/images/MAGNETICJUMPER1.jpg" alt="Magnetic Jumperのゲーム内">
+
+                        <div class="overview-text">
+                            <h4>ジャンル</h4>
+                            <p>ハイスピード2Dアクションゲーム</p>
+                            <h4>制作期間</h4>
+                            <p>約3ヵ月(2025/7/22～2025/10/1)</p>
+                            <h4>製作人数</h4>
+                            <p>13名(プランナー2名、プログラマー2名、デザイナー9名)</p>
+                            <h4>担当箇所</h4>
+                            <p>画面遷移、ギミック、アニメーション管理、プレイヤー(メイン攻撃やダッシュなどのアクション以外)、演出</p>
+                            <h4>開発環境</h4>
+                            <p>C/C++、Visual Studio、DXライブラリ</p>
+                        </div>
+                    </div>
+
+                    <h2 class="playmovie">ゲームプレイ動画</h2>
+                    <iframe class="magneticjumper-video"
+                            src="https://drive.google.com/file/d/1iJR2sS_nVegMIhAHJYiFClxNpctuk567/preview">
+                    </iframe>
+
+                    <h2 class="donnagame">どんなゲーム？</h2>
+                    <p>空を舞い、敵を蹴り穿つ！電磁ハイスピードジャンプアクション！</p>
+                    <p>敵を利用した、空中での縦横無尽な動きが特徴。舞台は機械生命体が蔓延る、崩壊した近未来の塔。</p>
+                    <p>調査依頼を受けたプレイヤーは電磁の力と強靭な脚力を武器に、塔の頂上を目指す。</p>
+                    <p>【Key Action】</p>
+                    <p>◆マグネシュート</p>
+                    <p>電磁の力で敵へと超高速接近！狙いを定め、必殺の蹴りを叩き込め！</p>
+                    <p>◆ エア・リブート</p>
+                    <p>キックを当てるとジャンプ・ダッシュが再チャージ！敵を足場にして、空中での連続行動が可能に。</p>
+
+                    <a class="kikakusyo" href="https://drive.google.com/file/d/1D7tKwRRBA8A-w--T_4c9KJHmTIbnOob1/view?usp=drive_link" target="_blank">企画書はこちら</a>
+
+                    <h2>アピールポイント</h2>
+
+                    <h3>ゲーム開始とゲームオーバーの演出</h3>
+                    <div class="apile-text">
+                        <p>ゲーム開始時とゲームオーバー時の演出を実装しました。</p>
+                        <p>ゲーム開始時は白いフラッシュを点滅させた後に黒フェードを行うことで、ゲームへの入りを印象付ける演出を実現しました。</p>
+                        <p>ゲームオーバー時は画面の上下から黒い帯が中央へ閉じるフェードアウトを実装し、リスポーン後は上下へ開くフェードインを行うことで、ゲームプレイへの復帰を自然につなげられるよう工夫しました。</p>
+                        <p>※ゲーム開始時の演出は実際のゲーム内でのみ確認できます。</p>
+                        <iframe class="ensyutsu-movie"
+                                src="https://drive.google.com/file/d/1-FU7tBC2h2Tiss_2zIiXuoqK9ZwfyT98/preview">
+                        </iframe>
+
+
+                        <p class="ensyutsu-tag">ゲームオーバー時の演出</p>
+                    </div>
+
+                    <h3>弾の回転処理</h3>
+                    <div class="apile-text">
+                        <p>弾の移動方向を表す方向ベクトルを利用し、弾の向きが進行方向と一致するように回転処理を実装しました。</p>
+                        <p>発射時に設定した方向ベクトルをもとに弾の移動と回転を連動させることで、斜め方向を含む様々な方向への攻撃でも、自然な見た目で弾を表示できるようにしました。</p>
+                        <p>移動処理と描画処理を連携させることで、プレイヤーが弾の軌道を直感的に把握できる表現を実現しました。</p>
+                        
+                        <iframe class="kaiten-movie"
+                                src="https://drive.google.com/file/d/1dYXNuMmFgADIN6jxGDyu_qiFr16zRpoO/preview">
+                        </iframe>
+
+                        <p class="kaiten-tag">弾の回転処理</p>
+                    </div>
+
+                    <h3>ダッシュ時のアニメーション制御</h3>
+                    <div class="apile-text">
+                        <p>ダッシュ中に壁へ衝突した際、移動していないにもかかわらずダッシュアニメーションが再生され続ける問題がありました。</p>
+                        <p>そこで、壁との衝突を判定し、移動できない状態ではダッシュアニメーションを停止する処理を実装しました。</p>
+                        <p>これにより、キャラクターの見た目と実際の挙動を一致させ、違和感のないアニメーションになるよう工夫しました。</p>
+
+                        <iframe class="dasshu-movie"
+                                src="https://drive.google.com/file/d/18A_-dok2Ep_Jw3kTqmggEOQsDwJg3IDC/preview">
+                        </iframe>
+
+                        <p class="dasshu-tag">ダッシュ時のアニメーション</p>
+                    </div>
+
+                    <h3>発射台</h3>
+                    <div class="apile-text">
+                        <p>発射方向に応じて処理を使い分ける発射台を実装しました。</p>
+                        <p>上下方向へ発射する場合はジャンプ処理、左右方向へ発射する場合はダッシュ処理を利用することで、それぞれの挙動を既存のシステムと連携させました。</p>
+                        <p>処理を使い分けることで、プレイヤーが違和感なく移動できる、爽快感のあるアクションを実現しました。</p>
+
+                        <iframe class="hasshadai-movie"
+                                src="https://drive.google.com/file/d/1rhDNUFqX98a1Lxi-HJsOm3HDixpmTgfX/preview">
+                        </iframe>
+
+                        <p class="hasshadai-tag">発射台に乗った場合</p>
+
+                    </div>
+
+                    <h2>ゲームの作品</h2>
+                    <h3 class="github-title">GitHubはこちらから</h3>
+
+                    <div class="github-box">
+                        <a href="https://github.com/Suzuki0007/Magnetic-Jumper" target="_blank">
+                            GitHub
+                        </a>
+                    </div>
+
+                    <h3 class="sakuhin">ソースコードや実行ファイルなどはこちらから</h3>
+
+                    <div class="sorce">
+                        <a href="https://drive.google.com/file/d/1GDBZAQD0iUtkl6HSWX9JSwoJaxAX-xvQ/preview" target="_blank">
+                            作品のソースコードや実行ファイル
+                        </a>
+                    </div>
+
+                </div>
+            </main>
+        </div>
+    </div>
+    <script>
+        menu = document.getElementById("side-menu");// サイドメニュー
+        button = document.getElementById("menu-btn");// メニューボタン
+        overlay = document.getElementById("overlay");// 背景を暗くする
+
+        // メニューボタンをクリックしたときの処理
+        button.addEventListener("click", () => {
+        // サイドメニューの表示・非表示を切り替える
+        menu.classList.toggle("open");
+        // 背景を暗くかどうかを切り替える
+        overlay.classList.toggle("show");
+
+        // メニューボタンの表示を切り替える
+        if(menu.classList.contains("open")) {
+        // サイドメニューが表示されている場合は「✕」にする
+        button.textContent = "✕";
+        }
+        else {
+        // サイドメニューが非表示の場合は「☰」にする
+        button.textContent = "☰";
+        }
+        });
+
+
+    </script>
+</body>
+
+</html>

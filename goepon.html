@@ -18,10 +18,16 @@
                 <a href="goepon.html">
                     冬季制作
                     <br>
-                        あぶないっ！ゴエポン！
-                        <br>
-                            ～お宝奪還伝～
-                        <br />
+                    あぶないっ！ゴエポン！
+                    <br>
+                    ～お宝奪還伝～
+                </a>
+            </li>
+            <li>
+                <a href="magneticjumper.html">
+                    夏季制作
+                    <br>
+                    Magnetic Jumper
                     <br />
                 </a>
             </li>
@@ -72,103 +78,102 @@
                     <p>ゴエポンの変身は決して完璧ではありません。</p>
                     <p>鋭い敵には見抜かれる弱点があり、さらにお宝を開ける際の物音が敵を引き寄せてしまいます。</p>
                     <p>常にリスクとリターンを天秤にかけながら進んでいきましょう。</p>
+                        <a class="kikakusyo" href="https://drive.google.com/file/d/1LKPCTVbTKwhBHanOkMVKZw1gudJ128TX/view?usp=drive_link" target="_blank">企画書はこちら</a>
 
-                    <a class="kikakusyo" href="https://drive.google.com/file/d/1LKPCTVbTKwhBHanOkMVKZw1gudJ128TX/view?usp=drive_link" target="_blank">企画書はこちら</a>
+                        <h2>アピールポイント</h2>
 
-                    <h2>アピールポイント</h2>
+                        <h3>モデルの回転</h3>
+                        <div class="apile-text">
+                            <p>プレイヤーの操作感を向上させるため、モデルの回転処理を実装しました。</p>
+                            <p>目標方向と現在の向きの角度差を求め、その差を -π～π の範囲に正規化することで、常に最短方向へ回転するようにしています。</p>
+                            <p>
+                                また、一度に目標方向へ向けるのではなく、角度差に補間係数を掛けて少しずつ回転させることで、
+                                自然で滑らかな向きの変化を実現しました。これにより、プレイヤーが方向転換を行った際にも違和感のない操作感を実現しています。
+                            </p>
 
-                    <h3>モデルの回転</h3>
-                    <div class="apile-text">
-                        <p>プレイヤーの操作感を向上させるため、モデルの回転処理を実装しました。</p>
-                        <p>目標方向と現在の向きの角度差を求め、その差を -π～π の範囲に正規化することで、常に最短方向へ回転するようにしています。</p>
-                        <p>
-                            また、一度に目標方向へ向けるのではなく、角度差に補間係数を掛けて少しずつ回転させることで、
-                            自然で滑らかな向きの変化を実現しました。これにより、プレイヤーが方向転換を行った際にも違和感のない操作感を実現しています。
-                        </p>
+                            <iframe class="kaiten-movie"
+                                    src="https://drive.google.com/file/d/1OLTx8iRsnM-iH2gAe5z1Grr-UBUfS__o/preview">
+                            </iframe>
 
-                        <iframe class="kaiten-movie"
-                                src="https://drive.google.com/file/d/1OLTx8iRsnM-iH2gAe5z1Grr-UBUfS__o/preview">
-                        </iframe>
-
-                        <p class="kaiten-tag">タヌキの回転処理</p>
-                    </div>
-
-                    <h3>タヌキ変身システム</h3>
-                    <div class="apile-text">
-                        <p>タヌキの変身システムでは、入力タイミングによる誤操作の防止を実装しました。</p>
-                        <p>変身ボタンを押した瞬間に変身処理を実行すると、プレイヤーの意図しないタイミングで変身してしまう問題がありました。</p>
-                        <p>そこで、変身ボタンを長押ししている間はすぐに変身処理を実行せず、入力状態を保持するようにしました。</p>
-                        <p>また、長押し中に移動入力が行われた場合は変身をキャンセルすることで、移動操作を優先できるようにしました。</p>
-                        <p>これにより、プレイヤーが意図したタイミングでのみ変身できるようになり、誤操作を防ぎながら快適な操作感を実現しました。</p>
-
-                        <iframe class="henshin-movie"
-                                src="https://drive.google.com/file/d/1yYQbYnQ7WUAeq8TBIhaH78dc4vXL4yej/preview">
-                        </iframe>
-
-                        <p class="henshin-tag">タヌキの変身処理</p>
-                    </div>
-
-                    <h3>敵の巡回ルート</h3>
-                    <div class="apile-text">
-                        <p>敵が設定した巡回ポイントを順番に移動するように実装しました。</p>
-                        <p>プランナーがUE5上で配置したマーカーをJSONファイルとして出力し、ゲーム側で読み込む仕組みを構築したことで、コードを変更することなく巡回ルートを調整できるようにしました。</p>
-                        <p>巡回では各ポイントへの到着判定と次のポイントへの切り替え処理を実装し、プレイヤーを見失った場合は、次の巡回ポイントへ向かうようにしました。</p>
-
-                        <div class="jyunkai-content">
-                            <div class="movie-area">
-                                <iframe class="jyunkai-movie"
-                                        src="https://drive.google.com/file/d/1Pj8Mq_Z2pVQDUMbfP3CGocIjW4zR9f22/preview">
-                                </iframe>
-                                <p class="jyunkai-tag">1ステージ目の巡回ルート</p>
-                            </div>
-
-                            <div class="image-area">
-                                <img class="jyunkai-image"
-                                     src="res/images/1ステージ目の巡回マーカー.png"
-                                     alt="巡回ルート">
-                                <p class="jyunkai-tag">UE5で配置した巡回マーカー</p>
-                            </div>
+                            <p class="kaiten-tag">タヌキの回転処理</p>
                         </div>
-                    </div>
 
-                    <h3 class="python-title">Pythonによるリソース自動生成ツール</h3>
-                    <div class="apile-text">
-                        <p>リソース管理の効率化を目的として、Pythonによるヘッダーファイル自動生成ツールを作成しました。</p>
-                        <p>指定したフォルダー内の画像やモデルファイルを走査し、ファイル名から定数名を生成してヘッダーファイルへ自動出力する仕組みを実装しました。</p>
-                        <p>リソースを追加・削除してもツールを実行するだけで最新のヘッダーファイルを生成できるため、管理の手間を削減するとともに、記述ミスや更新漏れの防止につながりました。</p>
+                        <h3>タヌキ変身システム</h3>
+                        <div class="apile-text">
+                            <p>タヌキの変身システムでは、入力タイミングによる誤操作の防止を実装しました。</p>
+                            <p>変身ボタンを押した瞬間に変身処理を実行すると、プレイヤーの意図しないタイミングで変身してしまう問題がありました。</p>
+                            <p>そこで、変身ボタンを長押ししている間はすぐに変身処理を実行せず、入力状態を保持するようにしました。</p>
+                            <p>また、長押し中に移動入力が行われた場合は変身をキャンセルすることで、移動操作を優先できるようにしました。</p>
+                            <p>これにより、プレイヤーが意図したタイミングでのみ変身できるようになり、誤操作を防ぎながら快適な操作感を実現しました。</p>
 
-                        <div class="python-image-container">
-                            <div class="python-image-item">
-                                <img src="res/images/Python内.png" alt="Pythonコード">
-                                <p>Pythonコード</p>
-                            </div>
+                            <iframe class="henshin-movie"
+                                    src="https://drive.google.com/file/d/1yYQbYnQ7WUAeq8TBIhaH78dc4vXL4yej/preview">
+                            </iframe>
 
-                            <div class="python-image-item-nai">
-                                <img src="res/images/ヘッダーファイルの中.png" alt="生成されたヘッダーファイル">
-                                <p>生成されたヘッダーファイル</p>
+                            <p class="henshin-tag">タヌキの変身処理</p>
+                        </div>
+
+                        <h3>敵の巡回ルート</h3>
+                        <div class="apile-text">
+                            <p>敵が設定した巡回ポイントを順番に移動するように実装しました。</p>
+                            <p>プランナーがUE5上で配置したマーカーをJSONファイルとして出力し、ゲーム側で読み込む仕組みを構築したことで、コードを変更することなく巡回ルートを調整できるようにしました。</p>
+                            <p>巡回では各ポイントへの到着判定と次のポイントへの切り替え処理を実装し、プレイヤーを見失った場合は、次の巡回ポイントへ向かうようにしました。</p>
+
+                            <div class="jyunkai-content">
+                                <div class="movie-area">
+                                    <iframe class="jyunkai-movie"
+                                            src="https://drive.google.com/file/d/1Pj8Mq_Z2pVQDUMbfP3CGocIjW4zR9f22/preview">
+                                    </iframe>
+                                    <p class="jyunkai-tag">1ステージ目の巡回ルート</p>
+                                </div>
+
+                                <div class="image-area">
+                                    <img class="jyunkai-image"
+                                         src="res/images/1ステージ目の巡回マーカー.png"
+                                         alt="巡回ルート">
+                                    <p class="jyunkai-tag">UE5で配置した巡回マーカー</p>
+                                </div>
                             </div>
                         </div>
 
-                    </div>
+                        <h3 class="python-title">Pythonによるリソース自動生成ツール</h3>
+                        <div class="apile-text">
+                            <p>リソース管理の効率化を目的として、Pythonによるヘッダーファイル自動生成ツールを作成しました。</p>
+                            <p>指定したフォルダー内の画像やモデルファイルを走査し、ファイル名から定数名を生成してヘッダーファイルへ自動出力する仕組みを実装しました。</p>
+                            <p>リソースを追加・削除してもツールを実行するだけで最新のヘッダーファイルを生成できるため、管理の手間を削減するとともに、記述ミスや更新漏れの防止につながりました。</p>
 
-                    <h2>ゲームの作品</h2>
-                    <h3 class="github-title">GitHubはこちらから</h3>
+                            <div class="python-image-container">
+                                <div class="python-image-item">
+                                    <img src="res/images/Python内.png" alt="Pythonコード">
+                                    <p>Pythonコード</p>
+                                </div>
 
-                    <div class="github-box">
-                        <a href="https://github.com/uh41/Goepon" target="_blank">
-                            GitHub
-                        </a>
-                    </div>
+                                <div class="python-image-item-nai">
+                                    <img src="res/images/ヘッダーファイルの中.png" alt="生成されたヘッダーファイル">
+                                    <p>生成されたヘッダーファイル</p>
+                                </div>
+                            </div>
 
-                    <h3 class="sakuhin">ソースコードや実行ファイルなどはこちらから</h3>
+                        </div>
 
-                    <div class="sorce">
-                        <a href="https://drive.google.com/file/d/14FmDFQ66Xt-GuFqgZPdCFbDONf9IikGT/preview" target="_blank">
-                            作品のソースコードや実行ファイル
-                        </a>
-                    </div>
+                        <h2>ゲームの作品</h2>
+                        <h3 class="github-title">GitHubはこちらから</h3>
 
-                </div>
+                        <div class="github-box">
+                            <a href="https://github.com/uh41/Goepon" target="_blank">
+                                GitHub
+                            </a>
+                        </div>
+
+                        <h3 class="sakuhin">ソースコードや実行ファイルなどはこちらから</h3>
+
+                        <div class="sorce">
+                            <a href="https://drive.google.com/file/d/14FmDFQ66Xt-GuFqgZPdCFbDONf9IikGT/preview" target="_blank">
+                                作品のソースコードや実行ファイル
+                            </a>
+                        </div>
+
+</div>
             </main>
         </div>
     </div>
