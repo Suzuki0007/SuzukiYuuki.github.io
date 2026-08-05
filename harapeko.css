@@ -1,0 +1,541 @@
+@charset "UTF-8";
+
+/* ===========================
+   ページ全体
+=========================== */
+
+/* ページ全体の設定 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "游ゴシック Medium", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+/* ===========================
+   ヘッダー
+=========================== */
+
+/* ヘッダーの横幅 */
+#header-container {
+    margin: 0 auto; /* 中央寄せ */
+    width: 694px; /* 横幅 */
+}
+
+/* ヘッダー背景 */
+header {
+    background-color: #214555; /* 背景色 */
+}
+
+/* ヘッダー内の余白 */
+#head-inner {
+    padding: 25px 0; /* 上下25px */
+    text-align: center; /* 中央揃え */
+}
+
+/* タイトル */
+h1 {
+    font-size: 60px; /* 文字サイズ */
+    font-weight: bold; /* 太字 */
+    padding: 10px 0 0 0; /* 上だけ余白 */
+    margin: 0; /* 外側余白なし */
+    color: #f3e6d2; /* 文字色 */
+}
+
+    /* タイトルのリンク */
+    h1 a {
+        font-weight: bold; /* 太字 */
+        color: #f3e6d2; /* 文字色 */
+        text-decoration: none; /* 下線なし */
+    }
+
+        /* タイトルリンクにカーソルを合わせた時 */
+        h1 a:hover {
+            color: #e8f3f9; /* 色変更 */
+            text-decoration: none;
+        }
+
+/* サブタイトル */
+.description {
+    font-size: 20px; /* 文字サイズ */
+    line-height: 1.2; /* 行間 */
+    color: #f3f2eb; /* 文字色 */
+    margin: 0.5em 0 1em 0; /* 外側余白 */
+}
+
+/* ===========================
+   見出し
+=========================== */
+
+h2 {
+    font-size: 40px;
+    margin: 0; /* 外側余白 */
+    padding: 4px 0; /* 内側余白 */
+    text-decoration: underline;
+    text-decoration-thickness: 3px; /* 線の太さ */
+    text-underline-offset: 4px; /* 文字から線までの距離 */
+}
+
+h3 {
+    font-size: 30px;
+    margin: 0;
+    padding: 4px 0;
+}
+
+h4 {
+    font-size: 20px;
+    margin: 0;
+    padding: 4px 0;
+}
+
+h5 {
+    font-size: 25px;
+    margin: 0;
+    padding: 4px 0;
+}
+
+/* ===========================
+   メインコンテンツ
+=========================== */
+
+/* コンテンツ全体 */
+#content-wrapper {
+    margin: 0 auto; /* 中央寄せ */
+    width: 1350px; /* 横幅 */
+}
+
+/* メイン文字色 */
+main {
+    color: #333;
+}
+
+/* コンテンツの余白 */
+#inner {
+    padding: 20px 0 0 275px; /* 左に200px余白 */
+}
+
+/* ===========================
+   リスト
+=========================== */
+
+/* ul */
+ul {
+    margin: 0 0 0 1em;
+    padding: 0;
+}
+
+/* li */
+li {
+    list-style: disc;
+}
+
+/* ===========================
+   段落
+=========================== */
+
+/* 段落 */
+p {
+    margin: 1em 0;
+}
+
+/* ===========================
+   画像
+=========================== */
+
+/* 全画像共通 */
+img {
+    max-width: 100%; /* 親要素を超えない */
+    height: auto; /* 縦横比維持 */
+    border: 0;
+}
+
+/* ===========================
+   区切り線
+=========================== */
+
+hr {
+    border-width: 1px 0 0 0;
+    border-style: solid;
+    border-color: #ccc;
+    height: 1px;
+}
+
+/* ===========================
+   リンク
+=========================== */
+
+/* 全リンク */
+a {
+    font-weight: normal;
+}
+
+#middle-inner {
+    padding: 20px 0 20px 0;
+}
+
+/* ===========================
+   サイドメニュー
+=========================== */
+
+/* サイドメニュー本体 */
+#side-menu {
+    position: fixed; /* 固定表示 */
+    top: 0;
+    left: 0;
+    width: 250px; /* 横幅 */
+    height: 100vh; /* 高さ */
+    background-color: #214555; /* 背景色 */
+    transition: left 0.3s ease; /* 開閉アニメーション */
+    display: flex;
+    flex-direction: column; /* 縦並び */
+    align-items: center; /* 中央揃え */
+    padding-top: 50px; /* 上余白 */
+}
+
+    /* メニューリスト */
+    #side-menu ul {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    /* メニュー項目 */
+    #side-menu li {
+        list-style: none;
+        text-align: center;
+        margin: 15px 0;
+    }
+
+/* ポートフォリオタイトル */
+.side-header {
+    width: 100%;
+    margin: 20px 0;
+    padding: 0;
+    text-align: center;
+    color: #66ccff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* メニューを開くボタン */
+#menu-btn {
+    display: none;
+    position: fixed;
+    top: 15px;
+    left: 20px;
+    z-index: 1000;
+}
+
+/* メニューが開いた状態 */
+#side-menu.open {
+    left: 0;
+}
+
+/* メニューリンク */
+#side-menu li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+    /* メニューリンクにカーソル */
+    #side-menu li a:hover {
+        color: #ffd966;
+    }
+
+/* ===========================
+   背景オーバーレイ
+=========================== */
+
+/* 背景を暗くする */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: none;
+    z-index: 999;
+}
+
+    /* オーバーレイ表示 */
+    #overlay.show {
+        display: block;
+    }
+
+/* メニューの重なり順 */
+#side-menu {
+    z-index: 1000;
+}
+
+/* ボタンを最前面に */
+#menu-btn {
+    z-index: 1001;
+}
+
+/* ===========================
+   概要
+=========================== */
+
+/* 概要ボックス */
+.overview-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+    /* 概要画像 */
+    .overview-box img {
+        width: 590px;
+        height: 400px;
+        border-radius: 8px;
+    }
+
+/* 概要テキスト */
+.overview-text {
+    flex: 1;
+}
+
+/* 概要テキストの見出し */
+.overview-text h4 {
+    margin-bottom: 5px;
+}
+
+    /* 概要テキストの段落 */
+    .overview-text p {
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+
+/* ===========================
+   Magnetic Jumper動画
+=========================== */
+
+/* 動画ボックス */
+.playmovie {
+    margin-top: 60px;
+}
+
+/* 動画 */
+.magneticjumper-video {
+    width: 800px;
+    max-width: 100%;
+    height: 400px;
+    display: block;
+    border: none;
+    border-radius: 10px;
+}
+
+/* どんなゲーム？ */
+.donnagame {
+    margin-top: 60px;
+}
+
+/* ===========================
+   企画書
+=========================== */
+
+/* 企画書ボタン */
+.kikakusyo {
+    display: inline-block;
+    padding: 10px 24px;
+    margin-top: 20px;
+    margin-left: 500px;
+    background-color: #214555;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+    /* ホバー時 */
+    .kikakusyo:hover {
+        background-color: #2f6278;
+    }
+
+/* アピールポイントのテキスト */
+.apile-text p {
+    margin: 1px 0;
+}
+
+/* 演出の動画 */
+.apile-text .ensyutsu-movie {
+    width: 600px;
+    max-width: 100%;
+    margin-top: 60px;
+    height: 300px;
+    display: block;
+    border: none;
+    border-radius: 10px;
+}
+
+/* 演出のタグ */
+.apile-text .ensyutsu-tag {
+    margin: 10px 0 30px 230px; /* top right bottom left */
+    font-size: 15px;
+}
+
+/* 弾の回転処理の動画 */
+.apile-text .kaiten-movie {
+    width: 600px;
+    max-width: 100%;
+    margin-top: 60px;
+    height: 300px;
+    display: block;
+    border: none;
+    border-radius: 10px;
+}
+
+/* 弾の回転処理のタグ */
+.apile-text .kaiten-tag {
+    margin: 10px 0 30px 230px; /* top right bottom left */
+    font-size: 15px;
+}
+
+/* ダッシュ時のアニメーション動画 */
+.apile-text .dasshu-movie {
+    width: 600px;
+    max-width: 100%;
+    margin-top: 60px;
+    height: 300px;
+    display: block;
+    border: none;
+    border-radius: 10px;
+}
+
+/* ダッシュ時のアニメーションのタグ */
+.apile-text .dasshu-tag {
+    margin: 10px 0 30px 230px; /* top right bottom left */
+    font-size: 15px;
+}
+
+/* 発射台の動画 */
+.apile-text .hasshadai-movie {
+    width: 600px;
+    max-width: 100%;
+    margin-top: 60px;
+    height: 300px;
+    display: block;
+    border: none;
+    border-radius: 10px;
+}
+
+/* 発射台のタグ */
+.apile-text .hasshadai-tag {
+    margin: 10px 0 30px 230px; /* top right bottom left */
+    font-size: 15px;
+}
+
+.github-title {
+    margin-left: 400px;
+}
+
+/* GitHubボックス */
+.github-box {
+    margin-top: 30px;
+    text-align: center;
+}
+    /* GitHubリンク */
+    .github-box a {
+        display: inline-block;
+        padding: 10px 24px;
+        margin: -60px 0 40px 20px;
+        background-color: #214555;
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 8px;
+        transition: background-color 0.3s;
+    }
+        
+        /* ホバー時 */
+        .github-box a:hover {
+            background-color: #2f6278;
+        }
+
+.sakuhin {
+    margin-left: 300px;
+}
+
+/* 作品のダウンロード */
+.sorce {
+    margin-top: 30px;
+    text-align: center;
+}
+    /* GitHubリンク */
+    .sorce a {
+        display: inline-block;
+        padding: 10px 24px;
+        margin: -60px 0 40px 20px;
+        background-color: #214555;
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 8px;
+        transition: background-color 0.3s;
+    }
+
+        /* ホバー時 */
+        .sorce a:hover {
+            background-color: #2f6278;
+        }
+
+@media screen and (max-width: 1200px) {
+    /* ☰を表示 */
+    #menu-btn {
+        display: block;
+    }
+    /* サイドメニューを非表示にする */
+    #side-menu {
+        left: -250px;
+    }
+        /* 開いた状態 */
+        #side-menu.open {
+            left: 0;
+        }
+}
+
+@media screen and (max-width: 767px) {
+    #header-container {
+        margin: 0;
+        width: 100%;
+    }
+
+    header {
+    }
+
+    #head-inner {
+        padding: 25px 10px;
+        background-color: #214555;
+    }
+
+    .description {
+    }
+
+    #content-wrapper {
+        margin: 0;
+        width: 100%;
+    }
+
+    main {
+        width: 100%;
+        color: #333;
+    }
+
+    #inner {
+        padding: 20px 10px 0 10px;
+    }
+
+    aside {
+        width: 100%;
+    }
+
+    #middle-inner {
+        padding: 10px 10px 20px 10px;
+    }
+}
