@@ -2,11 +2,11 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>はらぺこスライム</title>
+    <title>Amnesia_Labyrinth</title>
     <meta name="keywords" content="ページのキーワードA,B,C">
-    <meta name="description" content="はらぺこスライムのポートフォリオ">
+    <meta name="description" content="Amnesia_Labyrinthのポートフォリオ">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="harapeko.css">
+    <link rel="stylesheet" href="Amnesia_Labyrinth.css">
 </head>
 <body>
 
@@ -39,6 +39,14 @@
                     <br />
                 </a>
             </li>
+            <li>
+                <a href="Amnesia_Labyrinth.html">
+                    ハッカソン2回目
+                    <br>
+                    Amnesia_Labyrinth
+                    <br />
+                </a>
+            </li>
             <li><a href="sotsuron.html">卒業論文</a></li>
         </ul>
     </nav>
@@ -48,7 +56,7 @@
             <button id="menu-btn">☰</button>
             <div id="header-container">
                 <div id="head-inner">
-                    <h1>はらぺこスライム</h1>
+                    <h1>Amnesia_Labyrinth</h1>
                     <p class="description">ポートフォリオ</p>
                 </div>
             </div>
@@ -58,38 +66,39 @@
                 <div id="inner">
                     <h2>概要</h2>
                     <div class="overview-box">
-                        <img src="res/images/HARAPEKOSURAIMU1.png" alt="はらぺこスライムのゲーム内">
+                        <img src="res/images/AMNESIA_LABYRINTH1.png" alt="Amnesia_Labyrinthのゲーム内">
 
                         <div class="overview-text">
                             <h4>ジャンル</h4>
-                            <p>成長パズル</p>
+                            <p>協力タワーディフェンス的シューティングゲーム</p>
                             <h4>制作期間</h4>
-                            <p>5日間(2025/5/26-2025/5/30)</p>
+                            <p>5日間(2025/6/30-2025/7/4)</p>
                             <h4>製作人数</h4>
-                            <p>9名(プランナー3名、プログラマー1名、デザイナー5名)</p>
+                            <p>8名(プランナー2名、プログラマー1名、デザイナー5名)</p>
                             <h4>担当箇所</h4>
-                            <p>プレイヤー、ギミック、アイテム</p>
+                            <p>プレイヤー、敵、アイテム、コア、線分との当たり判定</p>
                             <h4>開発環境</h4>
-                            <p>C言語、Visual Studio、DXライブラリ</p>
+                            <p>C言語、C++、Visual Studio、DXライブラリ</p>
                         </div>
                     </div>
 
                     <h2 class="playmovie">ゲームプレイ動画</h2>
-                    <iframe class="harapeko-video"
-                            src="https://drive.google.com/file/d/1j_IjTwvNRINAY6UhsgqHTwXKy9QfK9Pl/preview">
+                    <iframe class="Amnesia_Labyrinth-video"
+                            src="https://drive.google.com/file/d/1VTRUZx1Z7u3er9lUhkALzU9LvR90cIvz/preview">
                     </iframe>
 
                     <h2 class="donnagame">どんなゲーム？</h2>
-                    <p>はらぺこなスライムを操作し、ステージ上に落ちている食べ物を求めて先に進んでいく倉庫番風成長パズルゲームです。</p>
-                    <p>スライムは動くたびにエネルギーを消費しますが、道中で食べ物を拾うことでエネルギーを獲得し、次の食べ物を求めて先に進みます。</p>
-                    <p>食べ物のエネルギー: 拾った食べ物の種類によって獲得できるエネルギー（+5、+10、+20など）が異なります。</p>
-                    <p>スライムの成長: エネルギーが一定値を超えるとスライムが成長します。成長することで、進路を阻むより重い障害物も動かせるようになります。</p>
+                    <p>『Amnesia_Labyrinth』は、父親と母親を操作し、記憶を失った娘を守りながら家族の記憶を取り戻す、2人協力タワーディフェンス的シューティングです。</p>
+                    <p>上空から降り注ぐのは、娘の心に刻まれた“トラウマの言葉”。2人は線でつながれた状態で移動し、言葉を避けるか、具現化した敵を攻撃して退けます。</p>
+                    <p>記憶の欠片は、プレイヤー自身または2人を結ぶ線で触れることで獲得可能。</p>
+                    <p>集めた欠片を2人同時にチャージすると、失われたHPと崩れた背景が修復され、家族の思い出が少しずつ蘇ります。</p>
+                    <p>協力して5つのハートを取り戻せば勝利。互いの位置取りと息を合わせることが、娘を救う鍵となります。</p>
 
-                    <a class="kikakusyo" href="https://drive.google.com/file/d/1comxkIKShO-A4ISJjsqWshlQvkS4RFgb/view?usp=drive_link" target="_blank">企画書はこちら</a>
+                    <a class="kikakusyo" href="https://drive.google.com/file/d/1qEVIM4e1Gkt-kF4lOYPyFjmrDoGbX3aK/view?usp=drive_link" target="_blank">企画書はこちら</a>
 
                     <h2>アピールポイント</h2>
 
-                    <h3>スライムの移動処理</h3>
+                    <h3>線分を利用した当たり判定</h3>
                     <div class="apile-text">
                         <p>プレイヤーの移動処理では、マスの座標を直接描画位置に反映するのではなく、移動先となる座標と実際に描画する座標を分けて管理しました。</p>
                         <p>移動先が決まった後、描画用の座標を一定の速度で少しずつ移動させることで、マスからマスへ瞬間的に移動するのではなく、滑らかに移動するよう実装しています。</p>
@@ -103,7 +112,7 @@
                         <p class="idousyori-tag">スライムが移動したときの様子</p>
                     </div>
 
-                    <h3>箱の押し分け</h3>
+                    <h3>パンチ攻撃</h3>
                     <div class="apile-text">
                         <p>プレイヤーのHPに応じて、押すことができるものの種類を制御するシステムを実装しました。</p>
                         <p>HPが30以上では軽いもの・中くらいのもの・重いものすべてを押すことができ、20～29では軽いものと中くらいのもののみ、19以下では軽いもののみを押せるようにしています。</p>
@@ -128,7 +137,7 @@
                         </div>
                     </div>
 
-                    <h3>プレイヤーの状態変化</h3>
+                    <h3>敵の状態変化</h3>
                     <div class="apile-text">
                         <p>プレイヤーのHPに応じて、スライムの見た目を4段階で切り替える処理を実装しました。</p>
                         <p>HPが30以上では大きなスライム、20～29では中くらいのスライム、6～19では小さなスライム、5以下ではさらに異なる見た目に切り替わるようにしています。</p>
@@ -155,6 +164,11 @@
                                 <p>瀕死のスライム</p>
                             </div>
                         </div>
+                    </div>
+
+                    <h3>コードの分離</h3>
+                    <div class="apile-text">
+
                     </div>
 
                     <h2>ゲームの作品</h2>
