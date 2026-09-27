@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>個人制作3回目</title>
+    <meta name="keywords" content="ページのキーワードA,B,C">
+    <meta name="description" content="個人制作3回目のポートフォリオ">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="kojin3.css">
+</head>
+<body>
+
+    <nav id="side-menu">
+        <p class="side-header">鈴木裕稀<br>ポートフォリオ</p>
+        <ul>
+            <li><a href="index.html">ホーム</a></li>
+            <li>
+                <a href="goepon.html">
+                    冬季制作
+                    <br>
+                    あぶないっ！ゴエポン！
+                    <br>
+                    ～お宝奪還伝～
+                </a>
+            </li>
+            <li>
+                <a href="magneticjumper.html">
+                    夏季制作
+                    <br>
+                    Magnetic Jumper
+                    <br />
+                </a>
+            </li>
+            <li>
+                <a href="harapeko.html">
+                    ハッカソン1回目
+                    <br>
+                    はらぺこスライム
+                    <br />
+                </a>
+            </li>
+            <li>
+                <a href="kojin1.html">
+                    個人制作1回目
+                </a>
+            </li>
+            <li>
+                <a href="kojin2.html">
+                    個人制作2回目
+                </a>
+            </li>
+            <li>
+                <a href="kojin3.html">
+                    個人制作3回目
+                </a>
+            </li>
+            <li><a href="sotsuron.html">卒業論文</a></li>
+        </ul>
+    </nav>
+    <div id="overlay"> </div>
+    <div id="outer">
+        <header>
+            <button id="menu-btn">☰</button>
+            <div id="header-container">
+                <div id="head-inner">
+                    <h1>個人制作3回目</h1>
+                    <p class="description">ポートフォリオ</p>
+                </div>
+            </div>
+        </header>
+        <div id="content-wrapper">
+            <main>
+                <div id="inner">
+                    <h2>概要</h2>
+                    <div class="overview-box">
+                        <img src="res/images/AMNESIA_LABYRINTH1.png" alt="Amnesia_Labyrinthのゲーム内">
+
+                        <div class="overview-text">
+                            <h4>ジャンル</h4>
+                            <p>3Dハイスピードアクションゲーム</p>
+                            <h4>制作期間</h4>
+                            <p>約2ヶ月間(2026/6/30-2026/9/8)</p>
+                            <h4>製作人数</h4>
+                            <p>1名</p>
+                            <h4>担当箇所</h4>
+                            <p>開発全般</p>
+                            <h4>開発環境</h4>
+                            <p>C++、Visual Studio、DXライブラリ</p>
+                        </div>
+                    </div>
+
+                    <h2 class="playmovie">ゲームプレイ動画</h2>
+                    <iframe class="kojin3-video"
+                            src="https://drive.google.com/file/d/1Vym7wcO2aukTQYAYwkGfIT-3zAE-m2hY/preview">
+                    </iframe>
+
+                    <h2 class="donnagame">どんなゲーム？</h2>
+                    <p>3Dフィールドを探索し、敵と戦うコマンドバトルゲームです。</p>
+                    <p>フィールド上で敵に接触するとバトル画面へ切り替わり、プレイヤーが「攻撃」を選択するとバトルが開始されます。</p>
+                    <p>攻撃後は、プレイヤーと敵のスピードを比較し、スピードの高いキャラクターから順番に行動します。</p>
+                    <p>フィールドでの探索と、行動順を意識したコマンドバトルを組み合わせたゲームとして制作しました。</p>
+
+                    <h2>アピールポイント</h2>
+
+                    <h3>ターゲットシステム</h3>
+                    <div class="apile-text">
+                        <p>敵を自動でターゲットするシステムを実装しました。</p>
+                        <p>まず、一定距離内にいる生存中の敵をターゲット候補として取得し、その中から画面中央に近い敵を優先して選択します。</p>
+                        <p>また、プレイヤーと敵の間に障害物がある場合は、プレイヤーから敵までの線分と障害物の当たり判定を行い、視線が遮られている敵を候補から除外しています。</p>
+                        <p>ターゲット中は現在のターゲットを維持し、ターゲットが解除された場合や対象がいなくなった場合には、候補を更新して再度ターゲットを選択するようにしました。</p>
+                        <p>ターゲット候補の取得と選択処理を分離することで、選択条件を変更・追加しやすい構成にしています。</p>
+
+                        <div class="attack-movie">
+                            <iframe src="https://drive.google.com/file/d/1jT2GAzQUO1IO6nb8Gz8MP8jNdkE0gTfe/preview"></iframe>
+                            <p>ターゲットの状態</p>
+                        </div>
+                    </div>
+
+                    <h3>クォータニオン</h3>
+                    <div class="apile-text">
+                        <p>クォータニオンとは、3D空間における回転を表現するための数学的な手法です。</p>
+                        <p>オイラー角で回転を扱う際に発生するジンバルロックを避けられ、複数の回転を組み合わせたり、回転を滑らかに補間したりできます。</p>
+                        <p>このクォータニオンを自作し、正規化や逆クォータニオン、クォータニオン同士の乗算などの基本処理に加え、軸と角度からの回転生成、オイラー角との変換、ベクトルの回転などを実装しました。</p>
+                        <p>また、キャラクターの向きを変更する処理では、現在の向きと目標の向きからクォータニオンを生成し、球面線形補間を行うことで滑らかに回転するようにしました。</p>
+                        <p>カメラの回転にも使用し、ヨー角やピッチ角に応じた回転を計算しています。</p>
+                    </div>
+
+                    <div class="github-code-links">
+                        <a class="github-code-link"
+                           href="https://github.com/Suzuki0007/kojinseisaku2/blob/main/AppFrame/source/math/vector4.h"
+                           target="_blank">
+                            クォータニオンのコードはこちら
+                        </a>
+                    </div>
+
+                    <h3>シェーダー</h3>
+                    <div class="apile-text">
+                        <p>HLSLを使用して、画面全体にモーションブラーを適用するポストエフェクトを実装しました。</p>
+                        <p>画面中央から各ピクセルまでの方向を求め、その方向に沿って9か所から画像をサンプリングし、取得した色を平均することで残像を表現しています。</p>
+                        <p>サンプリング位置を一定方向にずらすだけではなく、画面中央から外側へ向かう方向を利用することで、画面の中心から広がるような残像になるようにしました。</p>
+                        <p>また、サンプリングする位置が画面外にはみ出す場合があるため、UV座標を0～1の範囲に収めています。</p>
+                        <p>これにより、画面端でも不正な領域を参照せず、安定してエフェクトを描画できるようにしています。</p>
+                        <p>攻撃時にこのモーションブラーを適用し、攻撃の動きに合わせた残像を発生させることで、スピード感や迫力を表現しました。</p>
+                    </div>
+
+                    <div class="attack-movie">
+                        <iframe src="https://drive.google.com/file/d/1jT2GAzQUO1IO6nb8Gz8MP8jNdkE0gTfe/preview"></iframe>
+                        <p>攻撃したときのモーションブラー</p>
+                    </div>
+
+                    <div class="github-code-links">
+                        <a class="github-code-link"
+                           href="https://github.com/Suzuki0007/kojinseisaku2/blob/main/AppFrame/source/math/vector4.h"
+                           target="_blank">
+                            シェーダーのコードはこちら
+                        </a>
+                    </div>
+
+                    <h3>ヒットストップ＋カメラシェイク</h3>
+                    <div class="apile-text">
+                        <p>攻撃が敵に命中した際の手応えを強調するため、ヒットストップとカメラシェイクを実装しました。</p>
+                        <p>敵への攻撃が命中すると、攻撃者や対象、ダメージ量、ヒット位置などの情報をまとめて通知し、それを受け取ってヒットストップとカメラシェイクを発生させています。</p>
+                        <p>ヒットストップでは一定時間ゲームの更新を停止し、攻撃が当たった瞬間を強調しています。</p>
+                        <p>カメラシェイクでは、ダメージ量に応じて揺れの強さを決定し、時間経過に合わせて揺れが小さくなるようにしています。</p>
+                        <p>また、揺れの計算方法を分離することで、異なる揺れ方を追加できる構成にしました。</p>
+                    </div>
+
+                    <div class="attack-movie">
+                        <iframe src="https://drive.google.com/file/d/1jT2GAzQUO1IO6nb8Gz8MP8jNdkE0gTfe/preview"></iframe>
+                        <p>ヒットストップ＋カメラシェイクの状態</p>
+                    </div>
+
+                    <div class="github-code-links">
+                        <a class="github-code-link"
+                           href="https://github.com/Suzuki0007/kojinseisaku2/blob/main/AppFrame/source/math/vector4.h"
+                           target="_blank">
+                            ヒットストップのコードはこちら
+                        </a>
+                        <a class="github-code-link"
+                           href="https://github.com/Suzuki0007/kojinseisaku2/blob/main/AppFrame/source/math/matrix4.h"
+                           target="_blank">
+                            カメラシェイクのコードはこちら
+                        </a>
+                    </div>
+
+                    <h3>自作エフェクト</h3>
+                    <div class="apile-text">
+                        <p>攻撃時の演出として、複数の要素を組み合わせた自作エフェクトを実装しました。</p>
+                        <p>エフェクトは、攻撃方向に伸びるスピードライン、攻撃開始から一定時間後に発生するリング、攻撃先から飛び散る火花の3種類で構成しています。</p>
+                        <p>スピードラインは攻撃の移動距離に応じて長さを変化させ、リングと火花は発生するタイミングをずらすことで、攻撃の動きに合わせて段階的に演出が発生するようにしました。</p>
+                        <p>リングの拡大にはイージングを使用し、一定速度ではなく時間経過に応じて広がり方を変化させています。</p>
+                        <p>また、それぞれに寿命を設定して透明度を変化させ、攻撃終了時には全体をフェードアウトさせることで、自然に消えるようにしました。</p>
+                    </div>
+
+                    <div class="attack-movie">
+                        <iframe src="https://drive.google.com/file/d/1jT2GAzQUO1IO6nb8Gz8MP8jNdkE0gTfe/preview"></iframe>
+                        <p>攻撃したときの状態</p>
+                    </div>
+
+                    <div class="github-code-links">
+                        <a class="github-code-link"
+                           href="https://github.com/Suzuki0007/kojinseisaku2/blob/main/AppFrame/source/math/vector4.h"
+                           target="_blank">
+                            エフェクトのコードはこちら
+                        </a>
+                    </div>
+
+                    <h2>ゲームの作品</h2>
+                    <h3 class="github-title">GitHubはこちらから</h3>
+
+                    <div class="github-box">
+                        <a href="https://github.com/Suzuki0007/kojinseisaku2" target="_blank">
+                            GitHub
+                        </a>
+                    </div>
+
+                    <h3 class="sakuhin">ソースコードや実行ファイルなどはこちらから</h3>
+
+                    <div class="sorce">
+                        <a href="https://drive.google.com/file/d/10fQIiOz8ypBRR3Clnj4x0Z0d6004KiIu/preview" target="_blank">
+                            作品のソースコードや実行ファイル
+                        </a>
+                    </div>
+
+                </div>
+            </main>
+        </div>
+    </div>
+    <script>
+        menu = document.getElementById("side-menu");// サイドメニュー
+        button = document.getElementById("menu-btn");// メニューボタン
+        overlay = document.getElementById("overlay");// 背景を暗くする
+
+        // メニューボタンをクリックしたときの処理
+        button.addEventListener("click", () => {
+        // サイドメニューの表示・非表示を切り替える
+        menu.classList.toggle("open");
+        // 背景を暗くかどうかを切り替える
+        overlay.classList.toggle("show");
+
+        // メニューボタンの表示を切り替える
+        if(menu.classList.contains("open")) {
+        // サイドメニューが表示されている場合は「✕」にする
+        button.textContent = "✕";
+        }
+        else {
+        // サイドメニューが非表示の場合は「☰」にする
+        button.textContent = "☰";
+        }
+        });
+
+
+    </script>
+</body>
+
+</html>

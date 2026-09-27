@@ -100,74 +100,67 @@
 
                     <h3>線分を利用した当たり判定</h3>
                     <div class="apile-text">
-                        <p>プレイヤーの移動処理では、マスの座標を直接描画位置に反映するのではなく、移動先となる座標と実際に描画する座標を分けて管理しました。</p>
-                        <p>移動先が決まった後、描画用の座標を一定の速度で少しずつ移動させることで、マスからマスへ瞬間的に移動するのではなく、滑らかに移動するよう実装しています。</p>
-                        <p>マス単位で移動するゲームでありながら、プレイヤーが一度に位置を切り替えるのではなく、移動先まで徐々に移動することで、スライムらしい滑らかな移動感を表現しました。</p>
+                        <p>プレイヤー2人の座標から線分を作成し、その線分が敵やアイテムの矩形に触れているかを判定しています。</p>
+                        <p>まず、線分の両端の座標が矩形の内部に入っているかを確認します。どちらの端点も矩形の外側にある場合は、矩形を構成する4辺と線分が交差しているかをそれぞれ判定します。</p>
+                        <p>線分同士の交差判定では、各線分の始点と終点の位置関係から交差しているかを計算しています。</p>
+                        <p>これにより、線分が矩形の内部を通過する場合や、矩形の辺に触れる場合も検出できるようにしています。</p>
+                        <p>この処理によって、プレイヤー自身が敵やアイテムに直接触れていなくても、2人を結ぶ線が対象に触れることで判定を成立させています。</p>
+                        <p>敵に触れた場合は敵を撃破し、アイテムに触れた場合はアイテムを取得してコアのゲージを増加させています。</p>
 
-                        <iframe class="idousyori-movie"
-                                src="https://drive.google.com/file/d/10A9wDDuoxAv1xVNEzNvT3csV5AiRFj2P/preview">
-                        </iframe>
-
-
-                        <p class="idousyori-tag">スライムが移動したときの様子</p>
+                        <div class="github-code-links">
+                            <a class="github-code-link"
+                               href="https://github.com/Suzuki0007/Amnesia_Labyrinth/blob/main/Amnesia_labyrinth/souce/scenegamemain.cpp#L240-L256"
+                               target="_blank">
+                               線分同士の交差判定のコードはこちら
+                            </a>
+                            <a class="github-code-link"
+                               href="https://github.com/Suzuki0007/Amnesia_Labyrinth/blob/main/Amnesia_labyrinth/souce/scenegamemain.cpp#L258-L284"
+                               target="_blank">
+                               線分と矩形の当たり判定のコードはこちら
+                            </a>
+                        </div>
                     </div>
 
                     <h3>パンチ攻撃</h3>
                     <div class="apile-text">
-                        <p>プレイヤーのHPに応じて、押すことができるものの種類を制御するシステムを実装しました。</p>
-                        <p>HPが30以上では軽いもの・中くらいのもの・重いものすべてを押すことができ、20～29では軽いものと中くらいのもののみ、19以下では軽いもののみを押せるようにしています。</p>
-                        <p>実装では、ものの種類を判定したうえでプレイヤーの現在HPを参照し、HPの範囲に応じて押せるかどうかを制御しました。</p>
-                        <p>HPが減少するほど動かせるものが少なくなることで、HPの管理がステージ攻略にも影響する仕組みにしています。</p>
+                        <p>プレイヤーの入力に合わせてパンチを生成し、一定時間だけ敵への攻撃判定を行う処理を実装しました。</p>
+                        <p>パンチは9枚の画像を順番に切り替えることで、攻撃アニメーションを表示しています。</p>
+                        <p>また、パンチが発生している間はプレイヤーの移動を停止し、攻撃中であることが分かりやすいようにしています。 </p>
+                        <p>当たり判定では、パンチの矩形と敵の矩形が重なっているかを判定し、接触した敵のHPを減少させています。</p>
+                        <p>同じパンチで同じ敵に複数回ダメージが入らないよう、敵ごとに当たり判定済みの状態を管理しています。</p>
+                        <p>これにより、パンチのアニメーションと攻撃判定を連動させ、1回の攻撃で適切にダメージを与えられるようにしました。</p>
 
-                        <div class="box-images">
-                            <div class="box-image-item">
-                                <img src="res/images/小さいもの.png" alt="小さいもの">
-                                <p>プレイヤーが押せる軽いもの</p>
-                            </div>
-
-                            <div class="box-image-item">
-                                <img src="res/images/中くらいのもの.png" alt="中くらいのもの">
-                                <p>プレイヤーが押せる中くらいのもの</p>
-                            </div>
-
-                            <div class="box-image-item">
-                                <img src="res/images/大きいもの.png" alt="重いもの">
-                                <p>プレイヤーが押せる重いもの</p>
-                            </div>
+                        <div class="panch-movie">
+                            <iframe src="https://drive.google.com/file/d/1jT2GAzQUO1IO6nb8Gz8MP8jNdkE0gTfe/preview"></iframe>
+                            <p>パンチした状態</p>
                         </div>
                     </div>
 
                     <h3>敵の状態変化</h3>
                     <div class="apile-text">
-                        <p>プレイヤーのHPに応じて、スライムの見た目を4段階で切り替える処理を実装しました。</p>
-                        <p>HPが30以上では大きなスライム、20～29では中くらいのスライム、6～19では小さなスライム、5以下ではさらに異なる見た目に切り替わるようにしています。</p>
-                        <p>HPの減少に合わせてスライムの見た目が変化することで、数値だけでなく、視覚的にもプレイヤーの状態を確認できるよう工夫しました。</p>
+                        <p>敵は出現後、画面下方向へ移動し、一定の位置まで到達するとコアを追跡する状態へ変化するように実装しました。</p>
+                        <p>初期状態では一定の速度で下方向へ移動し、画面中央付近まで到達すると状態を切り替えます。</p>
+                        <p>状態が変化すると、コアの位置を取得し、コアに向かって移動するようにしています。</p>
+                        <p>また、敵の種類によってHPや移動速度を変更し、それぞれ異なる特徴を持たせています。</p>
+                        <p>このように、敵の位置に応じて移動方法を切り替えることで、単純に直線移動するだけではなく、プレイヤーが敵の接近に対応する必要がある動きを実現しました。</p>
 
-                        <div class="movie-grid">
-                            <div class="movie-item">
-                                <iframe src="https://drive.google.com/file/d/1jT2GAzQUO1IO6nb8Gz8MP8jNdkE0gTfe/preview"></iframe>
-                                <p>小さなスライム</p>
-                            </div>
-
-                            <div class="movie-item">
-                                <iframe src="https://drive.google.com/file/d/1Rboh1VPnv1w2jJrrbi-iLpaTXjw2pH6m/preview"></iframe>
-                                <p>中くらいのスライム</p>
-                            </div>
-
-                            <div class="movie-item">
-                                <iframe src="https://drive.google.com/file/d/1S67n0MNqJElujeAxskltB1tK6IbssKEO/preview"></iframe>
-                                <p>大きなスライム</p>
-                            </div>
-
-                            <div class="movie-item">
-                                <iframe src="https://drive.google.com/file/d/1jEJmhiv3EoU72SS71TAA2eZB2t4_EbRj/preview"></iframe>
-                                <p>瀕死のスライム</p>
-                            </div>
+                        <div class="enemy-movie">
+                            <iframe src="https://drive.google.com/file/d/1jT2GAzQUO1IO6nb8Gz8MP8jNdkE0gTfe/preview"></iframe>
+                            <p>敵が中央から変化したときの状態</p>
                         </div>
                     </div>
 
                     <h3>コードの分離</h3>
                     <div class="apile-text">
+                        <p>ゲーム内の処理を役割ごとに分け、プレイヤー、敵、アイテム、コア、パンチなどの処理をそれぞれのファイルで管理しました。</p>
+                        <p>各処理を分離することで、特定の機能を修正する際に関連するコードを見つけやすくし、他の処理への影響を抑えられるようにしています。</p>
+                        <p>また、ゲーム全体の進行や当たり判定など、複数のオブジェクトに関係する処理はシーン側で管理し、それぞれのオブジェクトの生成・移動・描画などの処理と役割を分けています。</p>
+                        <p>このように処理の役割を分けることで、コードを整理し、機能の追加や修正を行いやすい構成にしました。</p>
+
+                        <div class="file-image-item">
+                            <img src="res/images/ファイル分け.png" alt="ファイル分け">
+                            <p>ファイルの分離したフォルダー</p>
+                        </div>
 
                     </div>
 
@@ -175,7 +168,7 @@
                     <h3 class="github-title">GitHubはこちらから</h3>
 
                     <div class="github-box">
-                        <a href="https://github.com/Suzuki0007/harapeko_slime" target="_blank">
+                        <a href="https://github.com/Suzuki0007/Amnesia_Labyrinth" target="_blank">
                             GitHub
                         </a>
                     </div>
@@ -183,7 +176,7 @@
                     <h3 class="sakuhin">ソースコードや実行ファイルなどはこちらから</h3>
 
                     <div class="sorce">
-                        <a href="https://drive.google.com/file/d/1bn3RYwF4jcTyIrJPKNfW7iywqR-AbgKu/preview" target="_blank">
+                        <a href="https://drive.google.com/file/d/1wrV7PwY7x1p0G5-wGBRg22MUIukaXIK4/preview" target="_blank">
                             作品のソースコードや実行ファイル
                         </a>
                     </div>

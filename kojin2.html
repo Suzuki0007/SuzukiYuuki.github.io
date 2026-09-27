@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>個人制作2回目</title>
+    <meta name="keywords" content="ページのキーワードA,B,C">
+    <meta name="description" content="個人制作2回目のポートフォリオ">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="kojin2.css">
+</head>
+<body>
+
+    <nav id="side-menu">
+        <p class="side-header">鈴木裕稀<br>ポートフォリオ</p>
+        <ul>
+            <li><a href="index.html">ホーム</a></li>
+            <li>
+                <a href="goepon.html">
+                    冬季制作
+                    <br>
+                    あぶないっ！ゴエポン！
+                    <br>
+                    ～お宝奪還伝～
+                </a>
+            </li>
+            <li>
+                <a href="magneticjumper.html">
+                    夏季制作
+                    <br>
+                    Magnetic Jumper
+                    <br />
+                </a>
+            </li>
+            <li>
+                <a href="harapeko.html">
+                    ハッカソン1回目
+                    <br>
+                    はらぺこスライム
+                    <br />
+                </a>
+            </li>
+            <li>
+                <a href="kojin1.html">
+                    個人制作1回目
+                </a>
+            </li>
+            <li>
+                <a href="kojin2.html">
+                    個人制作2回目
+                </a>
+            </li>
+
+            <li><a href="sotsuron.html">卒業論文</a></li>
+        </ul>
+    </nav>
+    <div id="overlay"> </div>
+    <div id="outer">
+        <header>
+            <button id="menu-btn">☰</button>
+            <div id="header-container">
+                <div id="head-inner">
+                    <h1>個人制作2回目</h1>
+                    <p class="description">ポートフォリオ</p>
+                </div>
+            </div>
+        </header>
+        <div id="content-wrapper">
+            <main>
+                <div id="inner">
+                    <h2>概要</h2>
+                    <div class="overview-box">
+                        <img src="res/images/AMNESIA_LABYRINTH1.png" alt="Amnesia_Labyrinthのゲーム内">
+
+                        <div class="overview-text">
+                            <h4>ジャンル</h4>
+                            <p>ターン制バトルゲーム</p>
+                            <h4>制作期間</h4>
+                            <p>約3ヶ月間(2026/5/19-2026/6/30)</p>
+                            <h4>製作人数</h4>
+                            <p>1名</p>
+                            <h4>担当箇所</h4>
+                            <p>開発全般</p>
+                            <h4>開発環境</h4>
+                            <p>C++、スクリプト言語(Lua)、Visual Studio、DXライブラリ</p>
+                        </div>
+                    </div>
+
+                    <h2 class="playmovie">ゲームプレイ動画</h2>
+                    <iframe class="kojin2-video"
+                            src="https://drive.google.com/file/d/1Vym7wcO2aukTQYAYwkGfIT-3zAE-m2hY/preview">
+                    </iframe>
+
+                    <h2 class="donnagame">どんなゲーム？</h2>
+                    <p>3Dフィールドを探索し、敵と戦うコマンドバトルゲームです。</p>
+                    <p>フィールド上で敵に接触するとバトル画面へ切り替わり、プレイヤーが「攻撃」を選択するとバトルが開始されます。</p>
+                    <p>攻撃後は、プレイヤーと敵のスピードを比較し、スピードの高いキャラクターから順番に行動します。</p>
+                    <p>フィールドでの探索と、行動順を意識したコマンドバトルを組み合わせたゲームとして制作しました。</p>
+
+                    <h2>アピールポイント</h2>
+
+                    <h3>C++とLuaを連携したバトルシステム</h3>
+                    <div class="apile-text">
+                        <p>C++とLuaを連携させ、バトル中の行動順を制御するシステムを実装しました。</p>
+                        <p>キャラクターの情報や攻撃処理などゲームの基本部分はC++で管理し、Lua側ではキャラクターの速度をもとに行動順を決定し、順番に攻撃を実行する処理を担当させています。</p>
+                        <p>また、Luaのコルーチンを利⽤して処理を一時停止・再開することで、各キャラクターが一定時間ごとに行動するバトルの進行を実現しました。</p>
+                        <p>さらに、行動順や現在攻撃中のキャラクターをLua側で管理し、画面への表示も行っています。</p>
+                        <p>C++とLuaで処理の役割を分けることで、ゲーム本体の処理とバトルの進行ロジックを分離する構成にしました。</p>
+
+                        <div class="github-code-links">
+                            <a class="github-code-link"
+                               href="https://github.com/Suzuki0007/kojinseisaku2/blob/main/Game/Game/res/game.lua"
+                               target="_blank">
+                                Luaのコードはこちら
+                            </a>
+                        </div>
+                    </div>
+
+                    <h3>デザインパターンを活用したゲーム設計</h3>
+                    <div class="apile-text">
+                        <p>ゲームの拡張性や保守性を意識し、複数のデザインパターンを実際のゲーム開発に取り入れました。</p>
+                        <p>特に、キャラクターの状態を管理するために、状態ごとに処理を分離できるステートマシンを自作しました。</p>
+                        <p>状態を型として管理し、現在の状態に応じて処理を切り替えられるようにすることで、状態が増えた場合でも既存の処理への影響を抑えられる構造にしています。</p>
+                        <p>また、オブジェクトの生成や管理、状態変更の通知などにもデザインパターンを活用し、それぞれの役割を分離しました。</p>
+                        <p>パターンをそのまま当てはめるのではなく、ゲーム内の課題に合わせて設計することを意識しています。</p>
+                    </div>
+
+                    <h3>Componentによる機能分離</h3>
+                    <div class="apile-text">
+                        <p>キャラクターの機能を一つのクラスにまとめるのではなく、機能ごとに分離して扱えるComponent設計を実装しました。</p>
+                        <p>体力・速度・ジャンプ・アニメーション・状態管理などをそれぞれ独立した機能として切り分け、必要な機能を組み合わせてキャラクターを構成できるようにしています。</p>
+                        <p>また、Componentの生成や所有、更新などの管理処理も共通化し、各Componentの処理を統一して扱える構造にしました。</p>
+                        <p>これにより、キャラクターごとに必要な機能を柔軟に組み合わせられるだけでなく、新しい機能を追加する際にも既存のキャラクター処理への影響を抑えられる設計を目指しました。</p>
+                    </div>
+
+                    <h3>数学ライブラリの自作</h3>
+                    <div class="apile-text">
+                        <p>ゲームに必要な数学処理への理解を深めるため、Vector4やMatrix4などの3D数学ライブラリを自作しました。</p>
+                        <p>Vector4では、ベクトルの加減算や内積・外積、正規化、距離計算、線形補間などを実装し、Matrix4では平行移動・拡縮・回転やアフィン変換などの行列処理を実装しました。</p>
+                        <p>さらに、自作した数学ライブラリとDXライブラリの型を相互変換する仕組みも実装し、モデルの位置・回転や衝突判定など、実際のゲーム処理で利用できるようにしました。</p>
+                        <p>DXライブラリをそのまま利用するだけでなく、ゲームで扱うベクトルや行列の仕組みを自ら実装することで、処理の理解を深めることを意識しました。</p>
+                    </div>
+
+                    <div class="github-code-links">
+                        <a class="github-code-link"
+                           href="https://github.com/Suzuki0007/kojinseisaku2/blob/main/AppFrame/source/math/vector4.h"
+                           target="_blank">
+                            Vector4のコードはこちら
+                        </a>
+                        <a class="github-code-link"
+                           href="https://github.com/Suzuki0007/kojinseisaku2/blob/main/AppFrame/source/math/matrix4.h"
+                           target="_blank">
+                            Matrixのコードはこちら
+                        </a>
+                    </div>
+
+                    <h2>ゲームの作品</h2>
+                    <h3 class="github-title">GitHubはこちらから</h3>
+
+                    <div class="github-box">
+                        <a href="https://github.com/Suzuki0007/kojinseisaku2" target="_blank">
+                            GitHub
+                        </a>
+                    </div>
+
+                    <h3 class="sakuhin">ソースコードや実行ファイルなどはこちらから</h3>
+
+                    <div class="sorce">
+                        <a href="https://drive.google.com/file/d/10fQIiOz8ypBRR3Clnj4x0Z0d6004KiIu/preview" target="_blank">
+                            作品のソースコードや実行ファイル
+                        </a>
+                    </div>
+
+                </div>
+            </main>
+        </div>
+    </div>
+    <script>
+        menu = document.getElementById("side-menu");// サイドメニュー
+        button = document.getElementById("menu-btn");// メニューボタン
+        overlay = document.getElementById("overlay");// 背景を暗くする
+
+        // メニューボタンをクリックしたときの処理
+        button.addEventListener("click", () => {
+        // サイドメニューの表示・非表示を切り替える
+        menu.classList.toggle("open");
+        // 背景を暗くかどうかを切り替える
+        overlay.classList.toggle("show");
+
+        // メニューボタンの表示を切り替える
+        if(menu.classList.contains("open")) {
+        // サイドメニューが表示されている場合は「✕」にする
+        button.textContent = "✕";
+        }
+        else {
+        // サイドメニューが非表示の場合は「☰」にする
+        button.textContent = "☰";
+        }
+        });
+
+
+    </script>
+</body>
+
+</html>

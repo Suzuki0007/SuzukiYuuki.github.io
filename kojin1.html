@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>個人制作1回目</title>
+    <meta name="keywords" content="ページのキーワードA,B,C">
+    <meta name="description" content="個人制作1回目のポートフォリオ">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="kojin1.css">
+</head>
+<body>
+
+    <nav id="side-menu">
+        <p class="side-header">鈴木裕稀<br>ポートフォリオ</p>
+        <ul>
+            <li><a href="index.html">ホーム</a></li>
+            <li>
+                <a href="goepon.html">
+                    冬季制作
+                    <br>
+                    あぶないっ！ゴエポン！
+                    <br>
+                    ～お宝奪還伝～
+                </a>
+            </li>
+            <li>
+                <a href="magneticjumper.html">
+                    夏季制作
+                    <br>
+                    Magnetic Jumper
+                    <br />
+                </a>
+            </li>
+            <li>
+                <a href="harapeko.html">
+                    ハッカソン1回目
+                    <br>
+                    はらぺこスライム
+                    <br />
+                </a>
+            </li>
+            <li>
+                <a href="kojin1.html">
+                    個人制作1回目
+                </a>
+            </li>
+
+            <li><a href="sotsuron.html">卒業論文</a></li>
+        </ul>
+    </nav>
+    <div id="overlay"> </div>
+    <div id="outer">
+        <header>
+            <button id="menu-btn">☰</button>
+            <div id="header-container">
+                <div id="head-inner">
+                    <h1>個人制作1回目</h1>
+                    <p class="description">ポートフォリオ</p>
+                </div>
+            </div>
+        </header>
+        <div id="content-wrapper">
+            <main>
+                <div id="inner">
+                    <h2>概要</h2>
+                    <div class="overview-box">
+                        <img src="res/images/AMNESIA_LABYRINTH1.png" alt="Amnesia_Labyrinthのゲーム内">
+
+                        <div class="overview-text">
+                            <h4>ジャンル</h4>
+                            <p>殲滅型アクションゲーム</p>
+                            <h4>制作期間</h4>
+                            <p>約2ヶ月間(2025/10/31-2025/12/19)</p>
+                            <h4>製作人数</h4>
+                            <p>1名</p>
+                            <h4>担当箇所</h4>
+                            <p>開発全般</p>
+                            <h4>開発環境</h4>
+                            <p>C++、Visual Studio、DXライブラリ</p>
+                        </div>
+                    </div>
+
+                    <h2 class="playmovie">ゲームプレイ動画</h2>
+                    <iframe class="kojin1-video"
+                            src="https://drive.google.com/file/d/15ugdXzBWdt8JmrkGHNu696FwpapPMmsb/preview">
+                    </iframe>
+
+                    <h2 class="donnagame">どんなゲーム？</h2>
+                    <p>プレイヤーを操作し、制限時間内にステージ内の敵をすべて倒すことを目指す殲滅型アクションゲームです。 </p>
+                    <p>敵の位置を確認しながら攻撃や移動を行い、限られた時間の中で効率よく敵を倒していくことがポイントとなっています。</p>
+
+                    <h2>アピールポイント</h2>
+
+                    <h3>攻撃判定</h3>
+                    <div class="apile-text">
+                        <p>攻撃判定にはカプセル形状を使用し、プレイヤーの攻撃範囲を行いました。</p>
+                        <p>攻撃開始時に判定の発生までの待機時間と有効時間を設定し、有効中のみ敵とのカプセル同士の当たり判定を行うようにしています。</p>
+                        <p>また、攻撃判定をプレイヤーの右手のボーンに追従させることで、キャラクターの攻撃モーションに合わせて判定位置が移動するようにしました。</p>
+                        <p>ボーンのローカル行列とモデルのワールド行列からワールド座標を求め、毎フレーム攻撃判定を更新しています。</p>
+                        <p>同じ攻撃が同じ敵に何度も当たらないよう、攻撃ごとにヒット状態を管理し、一度命中した攻撃は再度その敵との判定を行わないようにしています。</p>
+
+                        <div class="attack-movie">
+                            <iframe src="https://drive.google.com/file/d/1jT2GAzQUO1IO6nb8Gz8MP8jNdkE0gTfe/preview"></iframe>
+                            <p>攻撃範囲の状態</p>
+                        </div>
+                    </div>
+
+                    <h3>AABBによる当たり判定</h3>
+                    <div class="apile-text">
+                        <p>プレイヤーを球、キューブをAABBとして扱い、球とAABBの当たり判定を実装しました。</p>
+                        <p>まず、プレイヤーの中心座標に最も近いAABB上の点をX・Y・Zそれぞれの軸で求め、プレイヤーの中心との距離が半径以下であれば衝突と判定します。</p>
+                        <p>衝突した場合は、まずY方向の押し出し量を計算し、上下方向の衝突を処理します。</p>
+                        <p>その後、X・Z方向の押し出し量を計算し、最も小さい方向へプレイヤーを移動させることで、障害物へのめり込みを防ぎました。</p>
+                        <p>さらに、押し出し処理の後にプレイヤーの下方向へ線分判定を行い、地面や足場の高さを取得してY座標を補正することで、正しく着地できるようにしました。</p>
+
+                        <div class="panch-movie">
+                            <iframe src="https://drive.google.com/file/d/1jT2GAzQUO1IO6nb8Gz8MP8jNdkE0gTfe/preview"></iframe>
+                            <p>キューブとの当たり判定の状態</p>
+                        </div>
+                    </div>
+
+                    <h3>プレイヤーのアクション</h3>
+                    <div class="apile-text">
+                        <p>プレイヤーのアクションを状態ごとに管理し、通常移動、ジャンプ、ダッシュ、回避、攻撃などを実装しました。</p>
+                        <p>入力された操作とプレイヤーの状態を確認し、地上・空中それぞれで実行できるアクションを切り替えています。</p>
+                        <p>特に空中攻撃では、ジャンプ中に一度だけ攻撃できるようにしました。</p>
+                        <p>空中攻撃中も重力による落下処理を続けることで、攻撃のために空中で動きが止まることを防ぎ、攻撃後もそのまま落下して着地できるようにしています。</p>
+                        <p>これにより、ジャンプから攻撃、着地までを一連の動作としてつなげ、空中でも敵との距離に応じて攻撃することができます。</p>
+                        <p>さらに、アクションごとに移動速度や重力、アニメーション速度を設定し、攻撃や回避中は通常移動を制限することで、それぞれの動作が意図した挙動になるよう調整しました。</p>
+
+                        <div class="enemy-movie">
+                            <iframe src="https://drive.google.com/file/d/1jT2GAzQUO1IO6nb8Gz8MP8jNdkE0gTfe/preview"></iframe>
+                            <p>敵が中央から変化したときの状態</p>
+                        </div>
+                    </div>
+
+                    <h2>ゲームの作品</h2>
+                    <h3 class="github-title">GitHubはこちらから</h3>
+
+                    <div class="github-box">
+                        <a href="https://github.com/Suzuki0007/kojinseisaku" target="_blank">
+                            GitHub
+                        </a>
+                    </div>
+
+                    <h3 class="sakuhin">ソースコードや実行ファイルなどはこちらから</h3>
+
+                    <div class="sorce">
+                        <a href="https://drive.google.com/file/d/1q9bqV5D_MUcyVBvjl-6kKK-sGf5LusKj/preview" target="_blank">
+                            作品のソースコードや実行ファイル
+                        </a>
+                    </div>
+
+                </div>
+            </main>
+        </div>
+    </div>
+    <script>
+        menu = document.getElementById("side-menu");// サイドメニュー
+        button = document.getElementById("menu-btn");// メニューボタン
+        overlay = document.getElementById("overlay");// 背景を暗くする
+
+        // メニューボタンをクリックしたときの処理
+        button.addEventListener("click", () => {
+        // サイドメニューの表示・非表示を切り替える
+        menu.classList.toggle("open");
+        // 背景を暗くかどうかを切り替える
+        overlay.classList.toggle("show");
+
+        // メニューボタンの表示を切り替える
+        if(menu.classList.contains("open")) {
+        // サイドメニューが表示されている場合は「✕」にする
+        button.textContent = "✕";
+        }
+        else {
+        // サイドメニューが非表示の場合は「☰」にする
+        button.textContent = "☰";
+        }
+        });
+
+
+    </script>
+</body>
+
+</html>
