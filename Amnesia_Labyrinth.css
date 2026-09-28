@@ -330,6 +330,44 @@ a {
     border-radius: 10px;
 }
 
+.panch-movie {
+    text-align: center;
+    margin-top: 40px;
+}
+
+    .panch-movie iframe {
+        width: 600px;
+        max-width: 100%;
+        height: 400px;
+        display: block;
+        margin: 0 auto;
+        border: none;
+        border-radius: 10px;
+    }
+
+    .panch-movie p {
+        margin-top: 10px;
+    }
+
+.enemy-movie {
+    text-align: center;
+    margin-top: 40px;
+}
+
+    .enemy-movie iframe {
+        width: 600px;
+        max-width: 100%;
+        height: 400px;
+        display: block;
+        margin: 0 auto;
+        border: none;
+        border-radius: 10px;
+    }
+
+    .panch-movie p {
+        margin-top: 10px;
+    }
+
 /* どんなゲーム？ */
 .donnagame {
     margin-top: 60px;

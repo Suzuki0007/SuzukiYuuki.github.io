@@ -409,6 +409,72 @@ a {
         margin-top: 10px;
     }
 
+/* アクションの動画 */
+/* 動画グリッド */
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* 動画アイテム */
+.movie-item {
+    text-align: center;
+}
+
+    .movie-item iframe {
+        width: 100%;
+        height: 300px;
+        display: block;
+        border: none;
+        border-radius: 10px;
+    }
+
+    .movie-item p {
+        margin-top: 10px;
+        margin-bottom: 0;
+    }
+
+/* 攻撃の動画 */
+.attack-movie {
+    text-align: center;
+    margin-top: 40px;
+}
+
+    .attack-movie iframe {
+        width: 600px;
+        max-width: 100%;
+        height: 400px;
+        display: block;
+        margin: 0 auto;
+        border: none;
+        border-radius: 10px;
+    }
+
+    .attack-movie p {
+        margin-top: 10px;
+    }
+
+/* AABBによる当たり判定の動画 */
+.aabb-movie {
+    text-align: center;
+    margin-top: 40px;
+}
+
+    .aabb-movie iframe {
+        width: 600px;
+        max-width: 100%;
+        height: 400px;
+        display: block;
+        margin: 0 auto;
+        border: none;
+        border-radius: 10px;
+    }
+
+    .aabb-movie p {
+        margin-top: 10px;
+    }
 
 .github-title {
     margin-left: 400px;

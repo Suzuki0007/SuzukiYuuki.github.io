@@ -330,6 +330,26 @@ a {
     border-radius: 10px;
 }
 
+/* コマンドの動画 */
+.komando-movie {
+    text-align: center;
+    margin-top: 40px;
+}
+
+    .komando-movie iframe {
+        width: 600px;
+        max-width: 100%;
+        height: 400px;
+        display: block;
+        margin: 0 auto;
+        border: none;
+        border-radius: 10px;
+    }
+
+    .komando-movie p {
+        margin-top: 10px;
+    }
+
 /* どんなゲーム？ */
 .donnagame {
     margin-top: 60px;

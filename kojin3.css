@@ -312,7 +312,7 @@ a {
     }
 
 /* ===========================
-   Amnesia Labyrinth動画
+   個人制作3回目動画
 =========================== */
 
 /* 動画ボックス */
@@ -329,6 +329,86 @@ a {
     border: none;
     border-radius: 10px;
 }
+
+/* ターゲットの動画 */
+.target-movie {
+    text-align: center;
+    margin-top: 40px;
+}
+
+    .target-movie iframe {
+        width: 600px;
+        max-width: 100%;
+        height: 400px;
+        display: block;
+        margin: 0 auto;
+        border: none;
+        border-radius: 10px;
+    }
+
+    .target-movie p {
+        margin-top: 10px;
+    }
+
+/* シェーダーの動画 */
+.shader-movie {
+    text-align: center;
+    margin-top: 40px;
+}
+
+    .shader-movie iframe {
+        width: 600px;
+        max-width: 100%;
+        height: 400px;
+        display: block;
+        margin: 0 auto;
+        border: none;
+        border-radius: 10px;
+    }
+
+    .shader-movie p {
+        margin-top: 10px;
+    }
+
+/* ヒットストップ＋カメラシェイクの動画 */
+.hitcamera-movie {
+    text-align: center;
+    margin-top: 40px;
+}
+
+    .hitcamera-movie iframe {
+        width: 600px;
+        max-width: 100%;
+        height: 400px;
+        display: block;
+        margin: 0 auto;
+        border: none;
+        border-radius: 10px;
+    }
+
+    .hitcamera-movie p {
+        margin-top: 10px;
+    }
+
+/* エフェクトの動画 */
+.effect-movie {
+    text-align: center;
+    margin-top: 40px;
+}
+
+    .effect-movie iframe {
+        width: 600px;
+        max-width: 100%;
+        height: 400px;
+        display: block;
+        margin: 0 auto;
+        border: none;
+        border-radius: 10px;
+    }
+
+    .effect-movie p {
+        margin-top: 10px;
+    }
 
 /* どんなゲーム？ */
 .donnagame {

@@ -367,7 +367,7 @@ a {
 .apile-text .ensyutsu-movie {
     width: 600px;
     max-width: 100%;
-    margin-top: 60px;
+    margin: 60px auto 0;
     height: 300px;
     display: block;
     border: none;
@@ -376,15 +376,16 @@ a {
 
 /* 演出のタグ */
 .apile-text .ensyutsu-tag {
-    margin: 10px 0 30px 230px; /* top right bottom left */
+    margin: 10px 0 30px 0;
     font-size: 15px;
+    text-align: center;
 }
 
 /* 弾の回転処理の動画 */
 .apile-text .kaiten-movie {
     width: 600px;
     max-width: 100%;
-    margin-top: 60px;
+    margin: 60px auto 0;
     height: 300px;
     display: block;
     border: none;
@@ -393,15 +394,16 @@ a {
 
 /* 弾の回転処理のタグ */
 .apile-text .kaiten-tag {
-    margin: 10px 0 30px 230px; /* top right bottom left */
+    margin: 10px 0 30px 0;
     font-size: 15px;
+    text-align: center;
 }
 
 /* ダッシュ時のアニメーション動画 */
 .apile-text .dasshu-movie {
     width: 600px;
     max-width: 100%;
-    margin-top: 60px;
+    margin: 60px auto 0;
     height: 300px;
     display: block;
     border: none;
@@ -410,15 +412,16 @@ a {
 
 /* ダッシュ時のアニメーションのタグ */
 .apile-text .dasshu-tag {
-    margin: 10px 0 30px 230px; /* top right bottom left */
+    margin: 10px 0 30px 0;
     font-size: 15px;
+    text-align: center;
 }
 
 /* 発射台の動画 */
 .apile-text .hasshadai-movie {
     width: 600px;
     max-width: 100%;
-    margin-top: 60px;
+    margin: 60px auto 0;
     height: 300px;
     display: block;
     border: none;
@@ -427,8 +430,9 @@ a {
 
 /* 発射台のタグ */
 .apile-text .hasshadai-tag {
-    margin: 10px 0 30px 230px; /* top right bottom left */
+    margin: 10px 0 30px 0;
     font-size: 15px;
+    text-align: center;
 }
 
 .github-title {

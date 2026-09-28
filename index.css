@@ -371,6 +371,21 @@ a {
     margin-left: 200px;
 }
 
+/* はらぺこスライムの作成時期 */
+.seisakujiki-harapeko {
+    margin-left: 160px;
+}
+
+/* Amnesia_Labyrinthの作成時期 */
+.seisakujiki-amnesia {
+    margin-left: 160px;
+}
+
+/* 個人制作1回目の作成時期 */
+.seisakujiki-kojin1 {
+    margin-left: 160px;
+}
+
 /* ゴエポンのタイトル名 */
 .game-main-goepon {
     margin-left: 20px;
@@ -379,6 +394,24 @@ a {
 
 /* Magnetic Jumperのタイトル名 */
 .game-main-mag {
+    margin-left: 160px;
+    margin-bottom: 20px;
+}
+
+/* はらぺこスライムのタイトル名 */
+.game-main-harapeko {
+    margin-left: 160px;
+    margin-bottom: 20px;
+}
+
+/* Amnesia_Labyrinthのタイトル名 */
+.game-main-amnesia {
+    margin-left: 160px;
+    margin-bottom: 20px;
+}
+
+/* 個人制作1回目のタイトル名 */
+.game-main-kojin1 {
     margin-left: 160px;
     margin-bottom: 20px;
 }
@@ -400,6 +433,36 @@ a {
     margin-left: 160px;
 }
 
+/* はらぺこスライムのジャンルタイトル */
+.janru-sub-harapeko {
+    margin-top: 0;
+    margin-left: 210px;
+}
+
+/* Amnesia_Labyrinthのジャンルタイトル */
+.janru-sub-amnesia {
+    margin-top: 0;
+    margin-left: 100px;
+}
+
+/* 個人制作1回目のジャンルタイトル */
+.janru-sub-kojin1 {
+    margin-top: 0;
+    margin-left: 160px;
+}
+
+/* 個人制作2回目のジャンルタイトル */
+.janru-sub-kojin2 {
+    margin-top: 0;
+    margin-left: 160px;
+}
+
+/* 個人制作3回目のジャンルタイトル */
+.janru-sub-kojin3 {
+    margin-top: 0;
+    margin-left: 140px;
+}
+
 /* 制作期間 */
 .kikann {
     margin-left: 210px;
@@ -411,6 +474,12 @@ a {
     margin-left: 130px;
 }
 
+/* 制作期間ハッカソン */
+.kikann-sub-hakkason {
+    margin-top: 0;
+    margin-left: 150px;
+}
+
 /* 制作人数 */
 .ninzu {
     margin-left: 210px;
@@ -420,6 +489,12 @@ a {
 .ninzu-sub {
     margin-top: 0;
     margin-left: 80px;
+}
+
+/* 制作人数個人 */
+.ninzu-sub-kojin {
+    margin-top: 0;
+    margin-left: 240px;
 }
 
 /* 担当箇所 */
@@ -439,6 +514,24 @@ a {
     margin-left: 60px;
 }
 
+/* はらぺこスライムの担当箇所 */
+.tantou-sub-harapeko {
+    margin-top: 0;
+    margin-left: 130px;
+}
+
+/* Amnesia_Labyrinthの担当箇所 */
+.tantou-sub-amnesia {
+    margin-top: 0;
+    margin-left: 90px;
+}
+
+/* 個人制作の担当箇所 */
+.tantou-sub-kojin {
+    margin-top: 0;
+    margin-left: 220px;
+}
+
 /* 開発環境 */
 .kaihatu {
     margin-left: 210px;
@@ -452,6 +545,36 @@ a {
 
 /* Magnetic Jumperの開発環境 */
 .kaihatu-sub-mag {
+    margin-top: 0;
+    margin-left: 110px;
+}
+
+/* はらぺこスライムの開発環境 */
+.kaihatu-sub-harapeko {
+    margin-top: 0;
+    margin-left: 110px;
+}
+
+/* Amnesia_Labyrinthの開発環境 */
+.kaihatu-sub-amnesia {
+    margin-top: 0;
+    margin-left: 90px;
+}
+
+/* 個人制作1回目の開発環境 */
+.kaihatu-sub-kojin1 {
+    margin-top: 0;
+    margin-left: 120px;
+}
+
+/* 個人制作2回目の開発環境 */
+.kaihatu-sub-kojin2 {
+    margin-top: 0;
+    margin-left: 40px;
+}
+
+/* 個人制作3回目の開発環境 */
+.kaihatu-sub-kojin3 {
     margin-top: 0;
     margin-left: 110px;
 }
@@ -476,6 +599,7 @@ a {
         background-color: #1a3a4a;
     }
 
+/* Magnetic Jumperの詳細ボタン */
 .detail-button-mag {
     display: inline-block;
     margin-top: 20px;
@@ -491,6 +615,63 @@ a {
 }
     /* Magnetic Jumperの詳細ボタンにカーソル */
     .detail-button-mag:hover {
+        background-color: #1a3a4a;
+    }
+
+/* はらぺこスライムの詳細ボタン */
+.detail-button-harapeko {
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: 130px;
+    margin-bottom: 40px;
+    padding: 10px 80px;
+    background-color: #214555;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+    /* はらぺこスライムの詳細ボタンにカーソル */
+    .detail-button-harapeko:hover {
+        background-color: #1a3a4a;
+    }
+
+/* Amnesia_Labyrinthの詳細ボタン */
+.detail-button-amnesia {
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: 130px;
+    margin-bottom: 40px;
+    padding: 10px 80px;
+    background-color: #214555;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+    /* Amnesia_Labyrinthの詳細ボタンにカーソル */
+    .detail-button-amnesia:hover {
+        background-color: #1a3a4a;
+    }
+
+/* 個人制作の詳細ボタン */
+.detail-button-kojin {
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: 130px;
+    margin-bottom: 40px;
+    padding: 10px 80px;
+    background-color: #214555;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+    /* 個人制作1回目の詳細ボタンにカーソル */
+    .detail-button-kojin:hover {
         background-color: #1a3a4a;
     }
 

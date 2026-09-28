@@ -392,17 +392,18 @@ a {
 .apile-text .idousyori-movie {
     width: 600px;
     max-width: 100%;
-    margin-top: 60px;
     height: 300px;
     display: block;
+    margin: 60px auto 0;
     border: none;
     border-radius: 10px;
 }
 
 /* 移動処理のタグ */
 .apile-text .idousyori-tag {
-    margin: 10px 0 30px 200px; /* top right bottom left */
+    margin: 10px 0 30px;
     font-size: 15px;
+    text-align: center;
 }
 
 /* 箱の画像 */
